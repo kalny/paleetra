@@ -7,21 +7,37 @@
 
 use yii\helpers\Html;
 
-$this->title = $name;
+$this->title = $exception->getMessage();
+
+
+if ($exception->statusCode == 404) {
+    $color = 'text-yellow';
+}else{
+    $color = 'text-red';
+}
 ?>
-<div class="site-error">
+<div class="error-page">
+    <h2 class="headline <?= $color ?>"> <?= $exception->statusCode ?></h2>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="error-content">
+        <h3><i class="fa fa-warning <?= $color ?>"></i> Oops! <?= $exception->getMessage() ?></h3>
 
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+        <p>
+            The above error occurred while the Web server was processing your request.
+            Please contact us if you think this is a server error. Thank you.
+        </p>
+
+        <form class="search-form">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Search">
+
+                <div class="input-group-btn">
+                    <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.input-group -->
+        </form>
     </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
+    <!-- /.error-content -->
 </div>

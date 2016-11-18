@@ -1,5 +1,6 @@
 <?php
 return [
+    'timeZone' => 'Europe/Kiev',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'cache' => [
@@ -11,5 +12,12 @@ return [
             'rules' => [
             ],
         ],
+        
+        'formatter' => [
+            'dateFormat' => 'd.MM.yyyy',
+            'timeFormat' => 'H:mm:ss',
+            'datetimeFormat' => 'd.MM.yyyy H:mm',
+        ],
+
     ],
 ];
