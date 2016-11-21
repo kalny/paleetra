@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Dashboard';
+$this->title = Yii::t('app', 'LBL_DASHBOARD');
 ?>
 <div class="site-index">
 

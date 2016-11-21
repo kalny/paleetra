@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use yii\web\ForbiddenHttpException;
 
 /**
  * Site controller
@@ -22,11 +23,11 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error', 'logout'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index', 'test'],
+                        'actions' => ['index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -54,13 +55,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if (! \Yii::$app->user->can('watchDashboard')) {
+            throw new ForbiddenHttpException;
+        }
+
         return $this->render('index');
     }
-
-    public function actionTest()
-    {
-        return $this->render('test');
-    }
+    
 
     /**
      * Login action.

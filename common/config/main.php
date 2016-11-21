@@ -19,5 +19,9 @@ return [
             'datetimeFormat' => 'd.MM.yyyy H:mm',
         ],
 
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+
     ],
 ];

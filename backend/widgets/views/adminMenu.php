@@ -10,10 +10,10 @@ use yii\helpers\Url;
 ?>
 
 <ul class="sidebar-menu">
-    <li class="header"><?= Yii::t('app', 'MAIN_NAVIGATION') ?></li>
+    <li class="header"><?= Yii::t('app', 'LBL_MAIN_NAVIGATION') ?></li>
     <?php foreach($data as $root): ?>
 
-    <?php //if (\Yii::$app->user->can($root['rbac'])):  ?>
+    <?php if (\Yii::$app->user->can($root['rbac'])):  ?>
     <li class="<?= (is_array($root['controller'])?in_array($controller, $root['controller']):$controller==$root['controller'])?'active':'' ?> treeview">
         <a href="#">
             <i class="fa <?= $root['icon'] ?>"></i>
@@ -28,7 +28,7 @@ use yii\helpers\Url;
             <?php
                 $route = $leaf['controller'] . '/' . $leaf['action'];
             ?>
-            <?php //if (\Yii::$app->user->can($leaf['rbac'])):  ?>
+            <?php if (\Yii::$app->user->can($leaf['rbac'])):  ?>
             <li <?= ($controller==$leaf['controller'] && $action==$leaf['action'])?'class="active"':'' ?> >
                 <a href="<?= Url::to([$route]) ?>">
                     <i class="fa <?= $leaf['icon'] ?>"></i>
@@ -40,12 +40,12 @@ use yii\helpers\Url;
                     <?php endif; ?>
                 </a>
             </li>
-            <?php //endif; ?>
+            <?php endif; ?>
             <?php endforeach; ?>
         </ul>
         <?php endif; ?>
     </li>
-    <?php //endif; ?>
+    <?php endif; ?>
 
 
 

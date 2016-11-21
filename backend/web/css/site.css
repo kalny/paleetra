@@ -122,3 +122,18 @@ a.desc:after {
 .btn-flat {
     border-radius: 0;
 }
+
+.grid-view td.action-column {
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: 0.1em;
+    max-width: 7em;
+}
+
+.fa-custom-color {
+    color: #97a0b3;
+}
+
+.fa-custom-color:hover{
+    color: #606c84;
+}

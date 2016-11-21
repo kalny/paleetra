@@ -1,16 +1,17 @@
 <?php
 
 use yii\helpers\Html;
+use backend\widgets\Box;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\User */
+/* @var $model backend\models\AuthRule */
 
-$this->title = Yii::t('app', 'LBL_CREATE_USER');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_USERS'), 'url' => ['index']];
+$this->title = Yii::t('app', 'LBL_CREATE_AUTH_RULE');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_AUTH_RULES'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-create">
+<div class="auth-rule-create">
 
     <div class="box">
 

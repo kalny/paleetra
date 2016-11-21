@@ -3,29 +3,29 @@ return [
     'adminEmail' => 'admin@example.com',
     'mainMenuData' => [
         [
-            'title' => 'Dashboard', 'controller' => 'site', 'icon' => 'fa-dashboard',
+            'title' => Yii::t('app', 'MNU_DASHBOARD'), 'controller' => 'site', 'icon' => 'fa-dashboard',
             'children' => [
-                ['title' => 'Home', 'controller' => 'site', 'action' => 'index', 'icon' => 'fa-home', 'rbac' => 'watchDashboard', 'badge' => 'bg-green', 'model' => 'common\models\User'],
-                ['title' => 'Sign Out', 'controller' => 'site', 'action' => 'logout', 'icon' => 'fa-sign-out', 'rbac' => 'watchDashboard']
+                ['title' => Yii::t('app', 'MNU_HOME'), 'controller' => 'site', 'action' => 'index', 'icon' => 'fa-home', 'rbac' => 'watchDashboard'],
+                ['title' => Yii::t('app', 'MNU_SIGN_OUT'), 'controller' => 'site', 'action' => 'logout', 'icon' => 'fa-sign-out', 'rbac' => 'watchDashboard']
             ],
             'rbac' => 'watchDashboard'
         ],
 
         [
-            'title' => 'Users', 'controller' => 'users', 'icon' => 'fa-users',
+            'title' => Yii::t('app', 'MNU_USERS'), 'controller' => 'users', 'icon' => 'fa-users',
             'children' => [
-                ['title' => 'List', 'controller' => 'users', 'action' => 'index', 'icon' => 'fa-list', 'rbac' => 'createUser'],
-                ['title' => 'Create', 'controller' => 'users', 'action' => 'create', 'icon' => 'fa-file-o', 'rbac' => 'createUser']
+                ['title' => Yii::t('app', 'MNU_LIST'), 'controller' => 'users', 'action' => 'index', 'icon' => 'fa-list', 'rbac' => 'manageUsers'],
+                ['title' => Yii::t('app', 'MNU_CREATE'), 'controller' => 'users', 'action' => 'create', 'icon' => 'fa-file-o', 'rbac' => 'manageUsers']
             ],
             'rbac' => 'watchDashboard'
         ],
         [
-            'title' => 'RBAC', 'controller' => ['permissions', 'rules', 'roles', 'assignment'], 'icon' => 'fa-lock',
+            'title' => Yii::t('app', 'MNU_RBAC'), 'controller' => ['permissions', 'rules', 'roles', 'assignment'], 'icon' => 'fa-lock',
             'children' => [
-                ['title' => 'Permissions', 'controller' => 'permissions', 'action' => 'index', 'icon' => 'fa-hand-o-up', 'rbac' => 'managePermissions'],
-                ['title' => 'Rules', 'controller' => 'rules', 'action' => 'index', 'icon' => 'fa-info', 'rbac' => 'managePermissions'],
-                ['title' => 'Roles', 'controller' => 'roles', 'action' => 'index', 'icon' => 'fa-mortar-board', 'rbac' => 'managePermissions'],
-                ['title' => 'Assignments', 'controller' => 'assignment', 'action' => 'index', 'icon' => 'fa-user', 'rbac' => 'managePermissions'],
+                ['title' => Yii::t('app', 'MNU_PERMISSIONS'), 'controller' => 'permissions', 'action' => 'index', 'icon' => 'fa-hand-o-up', 'rbac' => 'managePermissions'],
+                ['title' => Yii::t('app', 'MNU_RULES'), 'controller' => 'rules', 'action' => 'index', 'icon' => 'fa-info', 'rbac' => 'managePermissions'],
+                ['title' => Yii::t('app', 'MNU_ROLES'), 'controller' => 'roles', 'action' => 'index', 'icon' => 'fa-mortar-board', 'rbac' => 'managePermissions'],
+                ['title' => Yii::t('app', 'MNU_ASSIGNMENTS'), 'controller' => 'assignment', 'action' => 'index', 'icon' => 'fa-user', 'rbac' => 'managePermissions'],
             ],
             'rbac' => 'watchDashboard'
         ],

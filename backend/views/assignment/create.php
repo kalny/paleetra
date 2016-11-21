@@ -1,16 +1,17 @@
 <?php
 
 use yii\helpers\Html;
+use backend\widgets\Box;
 
 
 /* @var $this yii\web\View */
-/* @var $model common\models\User */
+/* @var $model backend\models\AuthAssignment */
 
-$this->title = Yii::t('app', 'LBL_CREATE_USER');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_USERS'), 'url' => ['index']];
+$this->title = Yii::t('app', 'LBL_CREATE_ASSIGNMENT');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_ASSIGNMENTS'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-create">
+<div class="auth-assignment-create">
 
     <div class="box">
 
@@ -29,5 +30,4 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
     </div>
-
 </div>

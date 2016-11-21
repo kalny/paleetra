@@ -6,6 +6,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use yii\helpers\ArrayHelper;
 
 /**
  * User model
@@ -23,8 +24,9 @@ use yii\web\IdentityInterface;
  */
 class User extends ActiveRecord implements IdentityInterface
 {
-    const STATUS_DELETED = 0;
+    const STATUS_BLOCKED = 0;
     const STATUS_ACTIVE = 10;
+    const STATUS_WAIT = 20;
 
 
     /**
@@ -51,8 +53,45 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
+            ['username', 'required'],
+            ['username', 'match', 'pattern' => '#^[\w_-]+$#i'],
+            ['username', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('app', 'MES_THIS_USERNAME_HAS_ALREADY_BEEN_TAKEN')],
+            ['username', 'string', 'min' => 2, 'max' => 255],
+
+            ['email', 'required'],
+            ['email', 'email'],
+            ['email', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('app', 'MES_THIS_EMAIL_ADDRESS_HAS_ALREADY_BEEN_TAKEN')],
+            ['email', 'string', 'max' => 255],
+
+            ['status', 'integer'],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            ['status', 'in', 'range' => array_keys(self::getStatusesArray())],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('app', 'LBL_ID'),
+            'created_at' => Yii::t('app', 'LBL_CREATED_AT'),
+            'updated_at' => Yii::t('app', 'LBL_UPDATED_AT'),
+            'username' => Yii::t('app', 'LBL_USERNAME'),
+            'email' => Yii::t('app', 'LBL_EMAIL'),
+            'status' => Yii::t('app', 'LBL_STATUS'),
+        ];
+    }
+
+    public function getStatusName()
+    {
+        return ArrayHelper::getValue(self::getStatusesArray(), $this->status);
+    }
+
+    public static function getStatusesArray()
+    {
+        return [
+            self::STATUS_BLOCKED => Yii::t('app', 'LBL_BLOCKED'),
+            self::STATUS_ACTIVE => Yii::t('app', 'LBL_ACTIVE'),
+            self::STATUS_WAIT => Yii::t('app', 'LBL_WAIT'),
         ];
     }
 
@@ -185,10 +224,5 @@ class User extends ActiveRecord implements IdentityInterface
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
-    }
-
-    public static function getNew()
-    {
-        return [0, 1, 2, 3];
     }
 }

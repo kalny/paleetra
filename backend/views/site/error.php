@@ -20,16 +20,17 @@ if ($exception->statusCode == 404) {
     <h2 class="headline <?= $color ?>"> <?= $exception->statusCode ?></h2>
 
     <div class="error-content">
-        <h3><i class="fa fa-warning <?= $color ?>"></i> Oops! <?= $exception->getMessage() ?></h3>
+        <h3><i class="fa fa-warning <?= $color ?>"></i> <?= Yii::t('app', 'MSG_OOPS') ?> <?= $exception->getMessage() ?></h3>
 
         <p>
-            The above error occurred while the Web server was processing your request.
-            Please contact us if you think this is a server error. Thank you.
+            <!--The above error occurred while the Web server was processing your request.
+            Please contact us if you think this is a server error. Thank you.-->
+            <?= Yii::t('app', 'MSG_THE_ABOVE_ERROR_OCCURED') ?>
         </p>
 
         <form class="search-form">
             <div class="input-group">
-                <input type="text" name="search" class="form-control" placeholder="Search">
+                <input type="text" name="search" class="form-control" placeholder="<?= Yii::t('app', 'LBL_SEARCH') ?>">
 
                 <div class="input-group-btn">
                     <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>

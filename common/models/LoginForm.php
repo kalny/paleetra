@@ -43,7 +43,11 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
             $user = $this->getUser();
             if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError('password', Yii::t('app', 'MES_INCORRECT_USERNAME_OR_PASSWORD'));
+            } elseif ($user && $user->status == User::STATUS_BLOCKED) {
+                $this->addError('username', Yii::t('app', 'MES_YOUR_ACCAUNT_IS_BLOCKED'));
+            } elseif ($user && $user->status == User::STATUS_WAIT) {
+                $this->addError('username', Yii::t('app', 'MES_YOUR_ACCAUNT_IS_NOT_CONFIRMED'));
             }
         }
     }

@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg"><?= Yii::t('app', 'MSG_SIGN_IN_TO_START_YOUR_SESSION') ?></p>
 
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
@@ -25,27 +25,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'class' => 'form-group field-loginform-username has-feedback required'
         ],
         'template' => '{input}<span class="glyphicon glyphicon-user form-control-feedback"></span>{error}{hint}'])
-        ->textInput(['placeholder' => 'Username'])?>
+        ->textInput(['placeholder' => Yii::t('app', 'LBL_USERNAME')])?>
 
         <?= $form->field($model, 'password', ['options' => [
             'tag' => 'div',
             'class' => 'form-group field-loginform-password has-feedback required',
         ],
         'template' => '{input}<span class="glyphicon glyphicon-lock form-control-feedback"></span>{error}{hint}'])
-        ->textInput(['placeholder' => 'Password', 'type' => 'password'])?>
+        ->textInput(['placeholder' => Yii::t('app', 'LBL_PASSWORD'), 'type' => 'password'])?>
 
 
         <div class="row">
             <div class="col-xs-8">
                 <div class="checkbox icheck">
                     <label>
-                        <input type="checkbox" name="rememberMe"> Remember Me
+                        <input type="checkbox" name="rememberMe"> <?= Yii::t('app', 'LBL_REMEMBER_ME') ?>
                     </label>
                 </div>
             </div>
             <!-- /.col -->
             <div class="col-xs-4">
-                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                <button type="submit" class="btn btn-primary btn-block btn-flat"><?= Yii::t('app', 'BTN_SIGN_IN') ?></button>
             </div>
             <!-- /.col -->
         </div>

@@ -1,13 +1,18 @@
 <?php
 
+use backend\models\User;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\components\grid\ActionColumn;
+use backend\components\grid\SetColumn;
+use backend\components\grid\LinkColumn;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
+$this->title = Yii::t('app', 'LBL_USERS');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
@@ -22,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= Html::a('<i class="fa fa-plus"></i>', ['create'], [
                     'class' => 'btn btn-box-tool',
-                    'title' => 'Create User',
+                    'title' => Yii::t('app', 'TTL_CREATE_USER'),
                     'type' => 'button',
                     'data-toggle' => 'tooltip']) ?>
 
@@ -30,29 +35,47 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="box-body">
-                                        <?= GridView::widget([
+            <?= GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
-        'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-
-                            'id',
-            'username',
-            'auth_key',
-            'password_hash',
-            'password_reset_token',
-            // 'email:email',
-            // 'status',
-            // 'created_at',
-            // 'updated_at',
-
-                ['class' => 'yii\grid\ActionColumn'],
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'], 
+                        'id',
+                        [
+                        'filter' => DatePicker::widget([
+                            'model' => $searchModel,
+                            'attribute' => 'date_from',
+                            'attribute2' => 'date_to',
+                            'type' => DatePicker::TYPE_RANGE,
+                            'separator' => '-',
+                            'pluginOptions' => ['format' => 'yyyy-mm-dd']
+                        ]),
+                        'attribute' => 'created_at',
+                        'format' => 'datetime',
+                    ],
+                    [
+                        'class' => LinkColumn::className(),
+                        'attribute' => 'username',
+                    ],
+                    'email:email',
+                    [
+                        'class' => SetColumn::className(),
+                        'filter' => User::getStatusesArray(),
+                        'attribute' => 'status',
+                        'name' => 'statusName',
+                        'cssCLasses' => [
+                            User::STATUS_ACTIVE => 'success',
+                            User::STATUS_WAIT => 'warning',
+                            User::STATUS_BLOCKED => 'default',
+                        ],
+                    ],
+                    ['class' => ActionColumn::className()],
                 ],
-                ]); ?>
-                                </div>
+            ]); ?>
+         </div>
 
         <div class="box-footer">
-            Footer
+            <?= Yii::t('app', 'LBL_FOOTER') ?>
         </div>
 
     </div>

@@ -2,28 +2,28 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\widgets\Box;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\User */
+/* @var $model backend\models\AuthRule */
 
-$this->title = (isset($model->fullname))?$model->fullname:$model->username;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_USERS'), 'url' => ['index']];
+$this->title = $model->name;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_AUTH_RULES'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-view">
-
+<div class="auth-rule-view">
+    
     <div class="box">
         <div class="box-header with-border">
             <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
 
             <div class="box-tools pull-right">
-                <?= Html::a('<i class="fa fa-edit"></i>', ['update', 'id' => $model->id], [
+                <?= Html::a('<i class="fa fa-edit"></i>', ['update', 'id' => $model->name], [
                     'class' => 'btn btn-box-tool',
                     'title' => Yii::t('app', 'BTN_UPDATE'),
                     'type' => 'button',
                     'data-toggle' => 'tooltip']) ?>
-
-                <?= Html::a('<i class="fa fa-trash"></i>', ['delete', 'id' => $model->id], [
+                <?= Html::a('<i class="fa fa-trash"></i>', ['delete', 'id' => $model->name], [
                     'class' => 'btn btn-box-tool',
                     'title' => Yii::t('app', 'BTN_DELETE'),
                     'type' => 'button',
@@ -40,18 +40,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= DetailView::widget([
                 'model' => $model,
                 'attributes' => [
-                    'id',
-                    'username',
-                    //'auth_key',
-                    //'password_hash',
-                    //'password_reset_token',
-                    'email:email',
-                    'created_at:datetime',
-                    'updated_at:datetime',
-                    [
-                        'attribute' => 'status',
-                        'value' => $model->getStatusName(),
-                    ],
+                    'name',
+                    'data:ntext',
+                    'created_at:date',
+                    'updated_at:date',
                 ],
             ]) ?>
         </div>
@@ -61,5 +53,4 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
     </div>
-
 </div>

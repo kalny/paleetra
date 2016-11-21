@@ -1,16 +1,16 @@
 <?php
 
 use yii\helpers\Html;
-
+use backend\widgets\Box;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\User */
+/* @var $model common\models\Role */
 
-$this->title = Yii::t('app', 'LBL_CREATE_USER');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_USERS'), 'url' => ['index']];
+$this->title = Yii::t('app', 'LBL_CREATE_ROLE');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_ROLES'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-create">
+<div class="role-create">
 
     <div class="box">
 
