@@ -107,7 +107,8 @@ DashboardAsset::register($this);
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="<?= Yii::t('app', 'LBL_SEARCH') ?>...">
               <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat" title="<?= Yii::t('app', 'BTN_SEARCH') ?>">
+                    <i class="fa fa-search"></i>
                 </button>
               </span>
                 </div>

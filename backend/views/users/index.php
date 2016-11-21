@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= Html::a('<i class="fa fa-plus"></i>', ['create'], [
                     'class' => 'btn btn-box-tool',
-                    'title' => Yii::t('app', 'TTL_CREATE_USER'),
+                    'title' => Yii::t('app', 'BTN_CREATE_USER'),
                     'type' => 'button',
                     'data-toggle' => 'tooltip']) ?>
 
