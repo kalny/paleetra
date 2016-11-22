@@ -1,6 +1,7 @@
 <?php
 namespace backend\controllers;
 
+use backend\components\Parser;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -27,7 +28,7 @@ class SiteController extends Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['index'],
+                        'actions' => ['index', 'parse'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -60,6 +61,24 @@ class SiteController extends Controller
         }
 
         return $this->render('index');
+    }
+    
+    public function actionParse()
+    {
+        $parser = new Parser(Yii::getAlias('@common'));
+
+        $tokens = $parser->getTokens();
+
+        $result = "<?php\n\n return [\n";
+
+        foreach ($tokens as $token)
+        {
+            $result .= "    '{$token}' => '',\n";
+        }
+
+        $result .= "];\n";
+
+        var_dump($result);
     }
     
 

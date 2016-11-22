@@ -23,8 +23,6 @@ if ($exception->statusCode == 404) {
         <h3><i class="fa fa-warning <?= $color ?>"></i> <?= Yii::t('app', 'MSG_OOPS') ?> <?= $exception->getMessage() ?></h3>
 
         <p>
-            <!--The above error occurred while the Web server was processing your request.
-            Please contact us if you think this is a server error. Thank you.-->
             <?= Yii::t('app', 'MSG_THE_ABOVE_ERROR_OCCURED') ?>
         </p>
 
