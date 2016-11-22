@@ -3,8 +3,8 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\AuthRule;
-use backend\models\AuthRuleSearch;
+use common\models\Article;
+use common\models\ArticleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,10 +12,13 @@ use yii\filters\AccessControl;
 use yii\web\ForbiddenHttpException;
 
 /**
- * RulesController implements the CRUD actions for AuthRule model.
+ * ArticlesController implements the CRUD actions for Article model.
  */
-class RulesController extends Controller
+class ArticlesController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
@@ -32,39 +35,39 @@ class RulesController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['post'],
+                    'delete' => ['POST'],
                 ],
             ],
         ];
     }
 
     /**
-     * Lists all AuthRule models.
+     * Lists all Article models.
      * @return mixed
      */
     public function actionIndex()
     {
-        
-        if (! \Yii::$app->user->can('managePermissions')) {
+        if (! \Yii::$app->user->can('manageArticles')) {
             throw new ForbiddenHttpException;
         }
 
-        $rules = AuthRule::find()->all();
+        $searchModel = new ArticleSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'rules' => $rules,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single AuthRule model.
-     * @param string $id
+     * Displays a single Article model.
+     * @param integer $id
      * @return mixed
      */
     public function actionView($id)
     {
-        
-        if (! \Yii::$app->user->can('managePermissions')) {
+        if (! \Yii::$app->user->can('manageArticles')) {
             throw new ForbiddenHttpException;
         }
 
@@ -74,22 +77,20 @@ class RulesController extends Controller
     }
 
     /**
-     * Creates a new AuthRule model.
+     * Creates a new Article model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        
-        if (! \Yii::$app->user->can('managePermissions')) {
+        if (! \Yii::$app->user->can('manageArticles')) {
             throw new ForbiddenHttpException;
         }
-        
 
-        $model = new AuthRule();
+        $model = new Article();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->name]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -98,22 +99,21 @@ class RulesController extends Controller
     }
 
     /**
-     * Updates an existing AuthRule model.
+     * Updates an existing Article model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id
+     * @param integer $id
      * @return mixed
      */
     public function actionUpdate($id)
     {
-        
-        if (! \Yii::$app->user->can('managePermissions')) {
+        if (! \Yii::$app->user->can('manageArticles')) {
             throw new ForbiddenHttpException;
         }
 
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->name]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -122,15 +122,14 @@ class RulesController extends Controller
     }
 
     /**
-     * Deletes an existing AuthRule model.
+     * Deletes an existing Article model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id
+     * @param integer $id
      * @return mixed
      */
     public function actionDelete($id)
     {
-        
-        if (! \Yii::$app->user->can('managePermissions')) {
+        if (! \Yii::$app->user->can('manageArticles')) {
             throw new ForbiddenHttpException;
         }
 
@@ -140,15 +139,15 @@ class RulesController extends Controller
     }
 
     /**
-     * Finds the AuthRule model based on its primary key value.
+     * Finds the Article model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $id
-     * @return AuthRule the loaded model
+     * @param integer $id
+     * @return Article the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = AuthRule::findOne($id)) !== null) {
+        if (($model = Article::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'MES_THE_REQUESTED_PAGE_DOES_NOT_EXIST'));

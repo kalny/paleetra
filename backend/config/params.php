@@ -10,7 +10,6 @@ return [
             ],
             'rbac' => 'watchDashboard'
         ],
-
         [
             'title' => Yii::t('app', 'MNU_USERS'), 'controller' => 'users', 'icon' => 'fa-users',
             'children' => [
@@ -26,6 +25,14 @@ return [
                 ['title' => Yii::t('app', 'MNU_RULES'), 'controller' => 'rules', 'action' => 'index', 'icon' => 'fa-info', 'rbac' => 'managePermissions'],
                 ['title' => Yii::t('app', 'MNU_ROLES'), 'controller' => 'roles', 'action' => 'index', 'icon' => 'fa-mortar-board', 'rbac' => 'managePermissions'],
                 ['title' => Yii::t('app', 'MNU_ASSIGNMENTS'), 'controller' => 'assignment', 'action' => 'index', 'icon' => 'fa-user', 'rbac' => 'managePermissions'],
+            ],
+            'rbac' => 'watchDashboard'
+        ],
+        [
+            'title' => Yii::t('app', 'MNU_ARTICLES'), 'controller' => 'articles', 'icon' => 'fa-users',
+            'children' => [
+                ['title' => Yii::t('app', 'MNU_LIST'), 'controller' => 'articles', 'action' => 'index', 'icon' => 'fa-list', 'rbac' => 'manageArticles'],
+                ['title' => Yii::t('app', 'MNU_CREATE'), 'controller' => 'articles', 'action' => 'create', 'icon' => 'fa-file-o', 'rbac' => 'manageArticles']
             ],
             'rbac' => 'watchDashboard'
         ],

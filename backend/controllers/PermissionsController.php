@@ -99,7 +99,7 @@ class PermissionsController extends \yii\web\Controller
         if (($model = Permission::findOne($name)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException(Yii::t('app', 'MES_THE_REQUESTED_PAGE_DOES_NOT_EXIST'));
         }
     }
 

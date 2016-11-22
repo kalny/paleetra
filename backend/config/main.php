@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'language' => 'ru-RU',
     'modules' => [
         'gii' => [
             'class' => 'yii\gii\Module',
@@ -47,6 +48,14 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                ],
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -55,6 +64,19 @@ return [
             ],
         ],
         */
+
+    ],
+    'controllerMap' => [
+        'elfinder' => [
+            'class' => 'mihaildev\elfinder\PathController',
+            'access' => ['@'],
+            'root' => [
+                'baseUrl'=>'@web',
+                'basePath'=>'@webroot',
+                'path' => 'upload/global',
+                'name' => 'Global'
+            ],
+        ]
     ],
     'params' => $params,
 ];
