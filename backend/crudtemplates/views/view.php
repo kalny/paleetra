@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= "<?= " ?>Html::a('<i class="fa fa-trash"></i>', ['delete', <?= $urlParams ?>], [
                     'class' => 'btn btn-box-tool',
-                    'title' => <?= $generator->generateString('Update') ?>,
+                    'title' => <?= $generator->generateString('Delete') ?>,
                     'type' => 'button',
                     'data' => [
                         'confirm' => <?= $generator->generateString('Are you sure you want to delete this item?') ?>,

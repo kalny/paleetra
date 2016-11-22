@@ -29,13 +29,12 @@ return [
             'rbac' => 'watchDashboard'
         ],
         [
-            'title' => Yii::t('app', 'MNU_ARTICLES'), 'controller' => 'articles', 'icon' => 'fa-users',
+            'title' => Yii::t('app', 'MNU_ARTICLES'), 'controller' => 'articles', 'icon' => 'fa-newspaper-o',
             'children' => [
                 ['title' => Yii::t('app', 'MNU_LIST'), 'controller' => 'articles', 'action' => 'index', 'icon' => 'fa-list', 'rbac' => 'manageArticles'],
                 ['title' => Yii::t('app', 'MNU_CREATE'), 'controller' => 'articles', 'action' => 'create', 'icon' => 'fa-file-o', 'rbac' => 'manageArticles']
             ],
             'rbac' => 'watchDashboard'
-        ],
-        
+        ]
     ]
 ];
