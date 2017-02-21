@@ -35,6 +35,31 @@ return [
                 ['title' => Yii::t('app', 'MNU_CREATE'), 'controller' => 'articles', 'action' => 'create', 'icon' => 'fa-file-o', 'rbac' => 'manageArticles']
             ],
             'rbac' => 'watchDashboard'
+        ],
+        [
+            'title' => Yii::t('app', 'MNU_PALEETRA'), 'controller' => ['prices', 'contacts', 'reviews'], 'icon' => 'fa-cogs',
+            'children' => [
+                ['title' => Yii::t('app', 'MNU_PRICES'), 'controller' => 'prices', 'action' => 'index', 'icon' => 'fa-dollar', 'rbac' => 'manageArticles'],
+                ['title' => Yii::t('app', 'MNU_CONTACTS'), 'controller' => 'contacts', 'action' => 'index', 'icon' => 'fa-headphones', 'rbac' => 'manageArticles'],
+                ['title' => Yii::t('app', 'MNU_REVIEWS'), 'controller' => 'reviews', 'action' => 'index', 'icon' => 'fa-quote-right', 'rbac' => 'manageArticles'],
+            ],
+            'rbac' => 'watchDashboard'
+        ],
+        [
+            'title' => Yii::t('app', 'MNU_EVENTS'), 'controller' => ['orders', 'calls'], 'icon' => 'fa-bell-o',
+            'children' => [
+                ['title' => Yii::t('app', 'MNU_ORDERS'), 'controller' => 'orders', 'action' => 'index', 'icon' => 'fa-money', 'rbac' => 'manageArticles', 'badge' => 'bg-red', 'model' => \backend\models\Order::className()],
+                ['title' => Yii::t('app', 'MNU_CALLS'), 'controller' => 'calls', 'action' => 'index', 'icon' => 'fa-phone', 'rbac' => 'manageArticles', 'badge' => 'bg-red', 'model' => \backend\models\Call::className()],
+            ],
+            'rbac' => 'watchDashboard'
+        ],
+        [
+            'title' => Yii::t('app', 'MNU_PORTFOLIO'), 'controller' => ['categories', 'works'], 'icon' => 'fa-briefcase',
+            'children' => [
+                ['title' => Yii::t('app', 'MNU_CATEGORIES'), 'controller' => 'categories', 'action' => 'index', 'icon' => 'fa-clone', 'rbac' => 'manageArticles'],
+                ['title' => Yii::t('app', 'MNU_WORKS'), 'controller' => 'works', 'action' => 'index', 'icon' => 'fa-file-photo-o', 'rbac' => 'manageArticles'],
+            ],
+            'rbac' => 'watchDashboard'
         ]
     ]
 ];

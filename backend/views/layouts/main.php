@@ -8,6 +8,8 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
 use backend\widgets\AdminMenuWidget;
+use backend\models\Order;
+use backend\models\Call;
 
 $user = Yii::$app->user->identity;
 $controller = Yii::$app->controller->id;
@@ -47,6 +49,78 @@ DashboardAsset::register($this);
 
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
+
+                    <?php $newOrders = Order::getNew(); if ($newOrders->count() > 0 && Yii::$app->user->can('manageArticles')) : ?>
+
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-warning"><?= $newOrders->count() ?></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header"><?= Yii::t('app', 'LBL_NEW_ORDERS') ?>: <?= $newOrders->count() ?></li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+
+                                        <?php foreach ($newOrders->limit(4)->all() as $order): ?>
+                                            <li><!-- start message -->
+                                                <a href="<?= \yii\helpers\Url::to(['orders/update', 'id' => $order->id]) ?>">
+
+                                                    <h4>
+                                                        <?= mb_substr($order->email, 0, 17) ?>...
+                                                        <small><i class="fa fa-clock-o"></i>
+                                                            <?= Yii::$app->getFormatter()->asDate($order->created_at, 'short') ?></small>
+                                                    </h4>
+                                                    <p><?= mb_substr($order->body, 0, 30) ?>...</p>
+                                                </a>
+                                            </li>
+                                            <!-- end message -->
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="<?= \yii\helpers\Url::to(['orders/index']) ?>"><?= Yii::t('app', 'LBL_SEE_ALL_ORDERS') ?></a></li>
+                            </ul>
+                        </li>
+
+
+                    <?php endif; ?>
+
+                    <?php $newCalls = Call::getNew(); if ($newCalls->count() > 0 && Yii::$app->user->can('manageArticles')) : ?>
+
+                        <li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-phone"></i>
+                                <span class="label label-danger"><?= $newCalls->count() ?></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header"><?= Yii::t('app', 'LBL_NEW_CALLS') ?>: <?= $newCalls->count() ?></li>
+                                <li>
+                                    <!-- inner menu: contains the actual data -->
+                                    <ul class="menu">
+
+                                        <?php foreach ($newCalls->limit(4)->all() as $order): ?>
+                                            <li><!-- start message -->
+                                                <a href="<?= \yii\helpers\Url::to(['calls/update', 'id' => $order->id]) ?>">
+
+                                                    <h4>
+                                                        <?= mb_substr($order->phone, 0, 17) ?>...
+                                                        <small><i class="fa fa-clock-o"></i>
+                                                            <?= Yii::$app->getFormatter()->asDate($order->created_at, 'short') ?></small>
+                                                    </h4>
+
+                                                </a>
+                                            </li>
+                                            <!-- end message -->
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="<?= \yii\helpers\Url::to(['calls/index']) ?>"><?= Yii::t('app', 'LBL_SEE_ALL_CALLS') ?></a></li>
+                            </ul>
+                        </li>
+
+
+                    <?php endif; ?>
 
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">

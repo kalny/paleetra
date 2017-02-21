@@ -33,9 +33,9 @@ use yii\helpers\Url;
                 <a href="<?= Url::to([$route]) ?>">
                     <i class="fa <?= $leaf['icon'] ?>"></i>
                     <span><?= Yii::t('app', $leaf['title']) ?></span>
-                    <?php if (isset($leaf['badge']) && count($leaf['model']::getNew()) > 0): ?>
+                    <?php if (isset($leaf['badge']) && $leaf['model']::getNew()->count() > 0): ?>
                     <span class="pull-right-container">
-                        <small class="label pull-right <?= $leaf['badge'] ?>"><?= count($leaf['model']::getNew()) ?></small>
+                        <small class="label pull-right <?= $leaf['badge'] ?>"><?= $leaf['model']::getNew()->count() ?></small>
                     </span>
                     <?php endif; ?>
                 </a>
