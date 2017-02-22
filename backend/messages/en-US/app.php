@@ -149,4 +149,6 @@ return [
     'BTN_CREATE_WORK' => 'Create Work',
     'LBL_UPDATE_WORK' => 'Update Work',
     'LBL_IMAGE' => 'Image',
+    'LBL_SHORT_TITLE' => 'Short title',
+    'LBL_SHORT_DESCRIPTION' => 'Short description',
 ];

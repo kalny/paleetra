@@ -23,6 +23,10 @@ use backend\models\Category;
 
     <?= $form->field($model, 'demo')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'title_short')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'description_short')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'category_id')->dropDownList(Category::find()->select(['title', 'id'])->indexBy('id')->column()) ?>
 
     <?= $form->field($model, 'image')->fileInput() ?>

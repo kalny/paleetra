@@ -150,4 +150,6 @@ return [
     'BTN_CREATE_WORK' => 'Создать работу',
     'LBL_UPDATE_WORK' => 'Редактирование работы',
     'LBL_IMAGE' => 'Изображение',
+    'LBL_SHORT_TITLE' => 'Короткий заголовок',
+    'LBL_SHORT_DESCRIPTION' => 'Короткое описание',
 ];
