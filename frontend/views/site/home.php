@@ -282,12 +282,7 @@ $this->params['tw_link'] = Yii::$app->params['tw_link'];
 
     <div class="container">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <form class="order-form" action="page.html">
-                <input class="form-control" type="text" name="phone" required placeholder="Телефон">
-                <input class="form-control" type="email" name="email" required placeholder="Email">
-                <textarea class="form-control" name="message" rows="7" placeholder="Коротко опишите задачу" required></textarea>
-                <button class="button btn-primary btn-main">Отправить заявку</button>
-            </form>
+            <?= $this->render('_order_form') ?>
         </div>
     </div>
 </section>

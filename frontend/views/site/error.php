@@ -6,22 +6,21 @@
 /* @var $exception Exception */
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 $this->title = $name;
-?>
-<div class="site-error">
+$this->context->layout = 'error_layout';
 
+?>
+
+<div class="container">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="alert alert-danger">
         <?= nl2br(Html::encode($message)) ?>
     </div>
 
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
+    <p>Во время обработки страницы произошла ошибка.</p>
+    <p>Если вы считаете, что это ошибка сервера, пожалуйста, свяжитесь с нами.</p>
+    <p><a href="<?= Url::to(['site/home']) ?>">Перейти на главную</a></p>
 </div>

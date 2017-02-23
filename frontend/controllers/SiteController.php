@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use frontend\models\Category;
 use frontend\models\Contact;
+use frontend\models\PhoneForm;
 use frontend\models\Price;
 use frontend\models\Review;
 use frontend\models\Work;
@@ -53,11 +54,6 @@ class SiteController extends Controller
             'contacts' => $contacts,
             'reviews' => $reviews,
         ]);
-    }
-
-    public function actionCell()
-    {
-       // return 'sdf';
     }
     
 }

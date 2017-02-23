@@ -47,7 +47,7 @@ class Order extends \yii\db\ActiveRecord
             [['created_at'], 'integer'],
             [['body'], 'string'],
             [['phone'], 'string', 'max' => 20],
-            [['email'], 'string', 'max' => 150],
+            [['email'], 'email'],
 
             ['status', 'integer'],
             ['status', 'default', 'value' => self::STATUS_NEW],
