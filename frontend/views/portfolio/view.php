@@ -76,7 +76,7 @@ $host = 'http://' . $_SERVER['HTTP_HOST'];
             <?php endif; ?>
             <?php if(!empty($work->demo)) : ?>
             <div class="sidepanel">
-                Этот проект размещщен на сервисе Github Pages, поэтому вы можете <a href="<?= $work->demo ?>" target="_blank">перейти по ссылке</a> и протестировать его работу.
+                Этот проект размещен на сервисе Github Pages, поэтому вы можете <a href="<?= $work->demo ?>" target="_blank">перейти по ссылке</a> и протестировать его работу.
             </div>
             <?php endif; ?>
             <a href="/" class="button btn-primary btn-main">Заказать сайт</a>
