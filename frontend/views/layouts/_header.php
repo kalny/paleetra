@@ -67,6 +67,25 @@ use yii\helpers\Html;
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <!-- Custom Browsers Color End -->
 
-    <script src='https://www.google.com/recaptcha/api.js?hl=ru'></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit" async="" defer=""></script>
+    <script>
+        var reCaptcha1;
+        var reCaptcha2;
+        var myCallBack = function() {
+            //Render the recaptcha1 on the element with ID "recaptcha1"
+            reCaptcha1 = grecaptcha.render('reCaptcha1', {
+                'sitekey' : '6LdVAhcUAAAAAAQ8O9U9Y5b6hUFh3CuD4IgQANOY', //Replace this with your Site key
+                'theme' : 'light'
+            });
+
+            //Render the recaptcha2 on the element with ID "recaptcha2"
+            reCaptcha2 = grecaptcha.render('reCaptcha2', {
+                'sitekey' : '6LdVAhcUAAAAAAQ8O9U9Y5b6hUFh3CuD4IgQANOY', //Replace this with your Site key
+                'theme' : 'light'
+            });
+        };
+    </script>
+
 
 </head>

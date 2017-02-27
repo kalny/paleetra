@@ -29,10 +29,12 @@ else{
 
 <?= $form->field($model, 'phone', ['template'=>'{input}{error}'])->textInput(['maxlength' => true, 'placeholder' => $model->getAttributeLabel( 'phone' )]) ?>
 
-<?= $form->field($model, 'reCaptcha', ['template'=>'{input}{error}'])->widget(
-    \himiklab\yii2\recaptcha\ReCaptcha::className(),
-    ['siteKey' => '6LdVAhcUAAAAAAQ8O9U9Y5b6hUFh3CuD4IgQANOY']
-) ?>
+<?//= $form->field($model, 'reCaptcha', ['template'=>'{input}{error}'])->widget(
+    //\himiklab\yii2\recaptcha\ReCaptcha::className(),
+    //['siteKey' => '6LdVAhcUAAAAAAQ8O9U9Y5b6hUFh3CuD4IgQANOY']
+//) ?>
+
+<div id="reCaptcha2"></div>
 
 <div class="form-group">
     <?= Html::submitButton('<span class="fa fa-phone"></span> Заказать звонок', ['class' => 'button']) ?>
