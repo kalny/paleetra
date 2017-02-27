@@ -17,6 +17,8 @@ class OrderForm extends Model
     public $email;
     public $body;
 
+    public $reCaptcha;
+
     public function rules()
     {
         return [
