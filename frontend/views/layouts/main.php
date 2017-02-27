@@ -6,7 +6,7 @@
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
 
-AppAsset::register($this);
+//AppAsset::register($this);
 
 ?>
 <?php $this->beginPage() ?>
