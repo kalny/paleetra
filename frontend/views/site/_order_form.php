@@ -32,7 +32,7 @@ else{
 
 <?= $form->field($model, 'body', ['template'=>'{input}{error}'])->textarea(['maxlength' => true, 'placeholder' => $model->getAttributeLabel( 'body' ), 'rows' => 7]) ?>
 
-<?= $form->field($model, 'reCaptcha')->widget(
+<?= $form->field($model, 'reCaptcha', ['template'=>'{input}{error}'])->widget(
     \himiklab\yii2\recaptcha\ReCaptcha::className(),
     ['siteKey' => '6LdVAhcUAAAAAAQ8O9U9Y5b6hUFh3CuD4IgQANOY']
 ) ?>
