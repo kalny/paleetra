@@ -39,6 +39,7 @@ class OrderForm extends Model
             'phone' => 'Телефон',
             'email' => 'Email',
             'body' => 'Коротко опишите задачу',
+            'reCaptcha' => 'Каптча',
         ];
     }
 }
