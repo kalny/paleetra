@@ -151,4 +151,6 @@ return [
     'LBL_IMAGE' => 'Image',
     'LBL_SHORT_TITLE' => 'Short title',
     'LBL_SHORT_DESCRIPTION' => 'Short description',
+    'BTN_UP' => 'Move up',
+    'BTN_DOWN' => 'Move down',
 ];

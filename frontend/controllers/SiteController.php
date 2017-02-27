@@ -43,7 +43,7 @@ class SiteController extends Controller
     {
         $prices = Price::find()->all();
         $categories = Category::find()->all();
-        $works = Work::find()->all();
+        $works = Work::find()->orderBy('pos ASC')->all();
         $contacts = Contact::find()->all();
         $reviews = Review::find()->all();
         

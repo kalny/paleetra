@@ -14,6 +14,8 @@ use yii\web\UploadedFile;
 
 class Work extends \common\models\Work
 {
+    use MovingUpDown;
+
     const SCENARIO_ADMIN_CREATE = 'adminCreate';
     const SCENARIO_ADMIN_UPDATE = 'adminUpdate';
 
@@ -73,7 +75,9 @@ class Work extends \common\models\Work
 
     public function afterSave($insert, $changedAttributes)
     {
-        parent::afterSave($insert, $changedAttributes);
+        if ($insert) {
+            $this->moveEnd();
+        }
 
         if ($this->image) {
 
@@ -87,6 +91,8 @@ class Work extends \common\models\Work
             $this->attachImage($path, true);
         }
 
+        parent::afterSave($insert, $changedAttributes);
+
     }
 
     public function beforeDelete()
@@ -97,4 +103,5 @@ class Work extends \common\models\Work
         }
         return parent::beforeDelete();
     }
+
 }
