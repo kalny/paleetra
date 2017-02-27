@@ -22,7 +22,7 @@ $host = 'http://' . $_SERVER['HTTP_HOST'];
         <div class="col-sm-8">
             <h1 class="inner-header"><?= $work->title ?></h1>
             <p><?= $work->description ?></p>
-            <p><img src="<?= $work->getImage()->getUrl() ?>" alt="<?= $work->title ?>" class="img-responsive port-image"></p>
+            <p><img src="<?= $work->getImage()->getUrl('748x') ?>" alt="<?= $work->title ?>" class="img-responsive port-image"></p>
             <p>Поделиться ссылкой:</p>
             <div class="social-panel">
                 <script>
@@ -58,8 +58,8 @@ $host = 'http://' . $_SERVER['HTTP_HOST'];
                         }
                     };
                 </script>
-                <a class="sb-fb" title="Поделиться на Facebook" onclick="Share.facebook('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl() ?>','<?= $work->description ?>')"><i class="fa fa-facebook"></i></a>
-                <a class="sb-vk" title="Поделиться с друзьями ВКонтакте" onclick="Share.vkontakte('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl() ?>', '<?= $work->description ?>')"><i class="fa fa-vk"></i></a>
+                <a class="sb-fb" title="Поделиться на Facebook" onclick="Share.facebook('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->description ?>')"><i class="fa fa-facebook"></i></a>
+                <a class="sb-vk" title="Поделиться с друзьями ВКонтакте" onclick="Share.vkontakte('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>', '<?= $work->description ?>')"><i class="fa fa-vk"></i></a>
                 <a class="sb-tw" title="Написать в Twitter" onclick="Share.twitter('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>')"><i class="fa fa-twitter"></i></a>
             </div>
         </div>

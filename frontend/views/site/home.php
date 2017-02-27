@@ -216,7 +216,7 @@ $this->params['tw_link'] = Yii::$app->params['tw_link'];
             <div id="portfolio_grid">
                 <?php foreach ($works as $work): ?>
                     <div class="mix col-md-3 col-sm-6 portfolio-item category-<?= $work->category->id ?>">
-                        <img src="<?= $work->getImage()->getUrl() ?>" alt="<?= $work->title ?>">
+                        <img src="<?= $work->getImage()->getUrl('500x') ?>" alt="<?= $work->title ?>">
                         <div class="port-item-cont">
                             <h3><?= $work->titleShort ?></h3>
                             <p><?= $work->descriptionShort ?></p>
