@@ -32,6 +32,11 @@ else{
 
 <?= $form->field($model, 'body', ['template'=>'{input}{error}'])->textarea(['maxlength' => true, 'placeholder' => $model->getAttributeLabel( 'body' ), 'rows' => 7]) ?>
 
+<?= $form->field($model, 'reCaptcha')->widget(
+    \himiklab\yii2\recaptcha\ReCaptcha::className(),
+    ['siteKey' => '6LdVAhcUAAAAAAQ8O9U9Y5b6hUFh3CuD4IgQANOY']
+) ?>
+
 <div class="form-group">
     <?= Html::submitButton('Отправить заявку', ['class' => 'button btn-primary btn-main']) ?>
 </div>

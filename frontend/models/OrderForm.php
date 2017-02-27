@@ -24,6 +24,7 @@ class OrderForm extends Model
             [['phone'], 'string', 'max' => 20],
             [['body'], 'string'],
             [['email'], 'email'],
+            [['reCaptcha'], \himiklab\yii2\recaptcha\ReCaptchaValidator::className(), 'secret' => '6LdVAhcUAAAAAGWEk54Zcn_Kqn1W-zWTthszmCij', 'uncheckedMessage' => 'Пожалуйста, подтвердите что вы не бот.']
         ];
     }
 

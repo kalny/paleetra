@@ -35,5 +35,12 @@ return [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
+
+        'reCaptcha' => [
+            'name' => 'reCaptcha',
+            'class' => 'himiklab\yii2\recaptcha\ReCaptcha',
+            'siteKey' => '6LdVAhcUAAAAAAQ8O9U9Y5b6hUFh3CuD4IgQANOY',
+            'secret' => '6LdVAhcUAAAAAGWEk54Zcn_Kqn1W-zWTthszmCij',
+        ],
     ],
 ];
