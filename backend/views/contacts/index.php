@@ -1,6 +1,6 @@
 <?php
 
-use backend\components\grid\ActionColumn;
+use backend\components\grid\PosActionColumn;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'position',
                     'phone',
                     'email:email',
-                    ['class' => ActionColumn::className()],
+                    ['class' => PosActionColumn::className()],
                 ],
             ]); ?>
             <?php Pjax::end(); ?>        

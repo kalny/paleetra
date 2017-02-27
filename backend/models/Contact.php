@@ -14,6 +14,8 @@ use yii\web\UploadedFile;
 
 class Contact extends \common\models\Contact
 {
+    use MovingUpDown;
+    
     const SCENARIO_ADMIN_CREATE = 'adminCreate';
     const SCENARIO_ADMIN_UPDATE = 'adminUpdate';
 
