@@ -67,4 +67,6 @@ use yii\helpers\Html;
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
     <!-- Custom Browsers Color End -->
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
