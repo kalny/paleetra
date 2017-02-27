@@ -79,6 +79,11 @@ $host = 'http://' . $_SERVER['HTTP_HOST'];
                 Этот проект размещен на сервисе Github Pages, поэтому вы можете <a href="<?= $work->demo ?>" target="_blank">перейти по ссылке</a> и протестировать его работу.
             </div>
             <?php endif; ?>
+            <?php if(!empty($work->link)) : ?>
+                <div class="sidepanel">
+                    Эта работа доступна по сылке: <a href="<?= $work->link ?>" target="_blank"><?= $work->link ?></a>
+                </div>
+            <?php endif; ?>
             <a href="/" class="button btn-primary btn-main">Заказать сайт</a>
         </div>
     </div>

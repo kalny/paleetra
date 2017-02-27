@@ -153,4 +153,5 @@ return [
     'LBL_SHORT_DESCRIPTION' => 'Short description',
     'BTN_UP' => 'Move up',
     'BTN_DOWN' => 'Move down',
+    'LBL_LINK' => 'Link',
 ];

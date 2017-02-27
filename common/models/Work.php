@@ -11,6 +11,7 @@ namespace common\models;
  * @property string $description
  * @property string $sources
  * @property string $demo
+ * @property string $link
  * @property integer $category_id
  *
  * @property Category $category

@@ -30,7 +30,7 @@ class Work extends \common\models\Work
             [['slug', 'title', 'description'], 'required'],
             [['description'], 'string'],
             [['category_id'], 'integer'],
-            [['slug', 'title', 'sources', 'demo'], 'string', 'max' => 255],
+            [['slug', 'title', 'sources', 'demo', 'link'], 'string', 'max' => 255],
             [['title_short', 'description_short'], 'string', 'max' => 100],
             [['slug'], 'unique'],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],
@@ -42,8 +42,8 @@ class Work extends \common\models\Work
     public function scenarios()
     {
         $scenarios = parent::scenarios();
-        $scenarios[self::SCENARIO_ADMIN_CREATE] = ['slug', 'title', 'description', 'sources', 'demo', 'category_id', 'image', 'title_short', 'description_short'];
-        $scenarios[self::SCENARIO_ADMIN_UPDATE] = ['slug', 'title', 'description', 'sources', 'demo', 'category_id', 'image', 'title_short', 'description_short'];
+        $scenarios[self::SCENARIO_ADMIN_CREATE] = ['slug', 'title', 'description', 'sources', 'demo', 'link', 'category_id', 'image', 'title_short', 'description_short'];
+        $scenarios[self::SCENARIO_ADMIN_UPDATE] = ['slug', 'title', 'description', 'sources', 'demo', 'link', 'category_id', 'image', 'title_short', 'description_short'];
         return $scenarios;
     }
 
@@ -59,6 +59,7 @@ class Work extends \common\models\Work
             'description' => Yii::t('app', 'LBL_DESCRIPTION'),
             'sources' => Yii::t('app', 'LBL_SOURCES'),
             'demo' => Yii::t('app', 'LBL_DEMO'),
+            'link' => Yii::t('app', 'LBL_LINK'),
             'category_id' => Yii::t('app', 'LBL_CATEGORY'),
             'image' => Yii::t('app', 'LBL_IMAGE'),
             'title_short' => Yii::t('app', 'LBL_SHORT_TITLE'),

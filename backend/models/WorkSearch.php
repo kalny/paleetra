@@ -19,7 +19,7 @@ class WorkSearch extends Work
     {
         return [
             [['id', 'category_id'], 'integer'],
-            [['slug', 'title', 'description', 'sources', 'demo'], 'safe'],
+            [['slug', 'title', 'description', 'sources', 'demo', 'link'], 'safe'],
         ];
     }
 
@@ -67,7 +67,8 @@ class WorkSearch extends Work
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'sources', $this->sources])
-            ->andFilterWhere(['like', 'demo', $this->demo]);
+            ->andFilterWhere(['like', 'demo', $this->demo])
+            ->andFilterWhere(['like', 'link', $this->link]);
 
         return $dataProvider;
     }

@@ -19,9 +19,11 @@ use backend\models\Category;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'sources')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'sources')->textInput(['maxlength' => true, 'placeholder' => '%username%/%repository%']) ?>
 
-    <?= $form->field($model, 'demo')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'demo')->textInput(['maxlength' => true, 'placeholder' => 'https://%username%.github.io/%repository%/']) ?>
+
+    <?= $form->field($model, 'link')->textInput(['maxlength' => true, 'placeholder' => 'http://domain.com']) ?>
 
     <?= $form->field($model, 'title_short')->textInput(['maxlength' => true]) ?>
 
