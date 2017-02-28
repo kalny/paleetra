@@ -7,6 +7,10 @@ use yii\helpers\Url;
 
 $this->title = Yii::$app->params['title_short'] . ': ' . $work->title;
 $this->params['title_short'] = Yii::$app->params['title_short'];
+$this->params['phone'] = Yii::$app->params['phone'];
+
+$this->params['description'] = Yii::$app->params['description'];
+$this->params['keywords'] = Yii::$app->params['keywords'];
 
 $this->params['vk_link'] = Yii::$app->params['vk_link'];
 $this->params['fb_link'] = Yii::$app->params['fb_link'];

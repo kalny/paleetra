@@ -18,7 +18,9 @@ use yii\helpers\Html;
 
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <meta name="description" content="">
+
+    <meta name="description" content="<?= Html::encode($this->params['description']) ?>">
+    <meta name="keywords" content="<?= Html::encode($this->params['keywords']) ?>">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

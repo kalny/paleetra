@@ -70,7 +70,7 @@ if (!is_null($success)) {
 
                     <div class="col-md-3 col-sm-4 phone-wrapper">
                         <div class="phonenumber">
-                            <span>+3 8(099) 008 20 17</span>
+                            <span><?= Html::encode($this->params['phone']) ?></span>
                             <a class="phoneme-popup-link" href="#phoneme-popup">Перезвоните мне</a>
 
                             <!-- START POPUP WINDOW -->
