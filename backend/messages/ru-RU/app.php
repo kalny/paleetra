@@ -155,4 +155,11 @@ return [
     'BTN_UP' => 'Переместить вверх',
     'BTN_DOWN' => 'Переместить вниз',
     'LBL_LINK' => 'Ссылка',
+    'LBL_COLOR' => 'Цвет',
+    'MNU_MOTIVATIONS' => 'Мотивации',
+    'LBL_CREATE_MOTIVATION' => 'Создание мотивации',
+    'LBL_MOTIVATIONS' => 'Мотивации',
+    'BTN_CREATE_MOTIVATION' => 'Создать мотивацию',
+    'LBL_UPDATE_MOTIVATION' => 'Редактирование мотивации',
+    'MES_ALREADY_HAVE_THREE_MOTIVATIONS' => 'Уже есть 3 мотивации!',
 ];

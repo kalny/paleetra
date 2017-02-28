@@ -154,4 +154,11 @@ return [
     'BTN_UP' => 'Move up',
     'BTN_DOWN' => 'Move down',
     'LBL_LINK' => 'Link',
+    'LBL_COLOR' => 'Color',
+    'MNU_MOTIVATIONS' => 'Motivations',
+    'LBL_CREATE_MOTIVATION' => 'Create Motivation',
+    'LBL_MOTIVATIONS' => 'Motivations',
+    'BTN_CREATE_MOTIVATION' => 'Create Motivation',
+    'LBL_UPDATE_MOTIVATION' => 'Update Motivation',
+    'MES_ALREADY_HAVE_THREE_MOTIVATIONS' => 'Already have 3 Motivations!',
 ];

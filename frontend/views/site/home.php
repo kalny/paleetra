@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $motivations \frontend\models\Motivation[] */
 /* @var $prices \frontend\models\Price[] */
 /* @var $categories \frontend\models\Category[] */
 /* @var $works \frontend\models\Work[] */
@@ -29,35 +30,17 @@ $this->params['tw_link'] = Yii::$app->params['tw_link'];
 
     <div class="container">
         <div class="row">
+            <?php foreach ($motivations as $motivation) : ?>
             <div class="col-md-4">
-                <div class="card" style="background-color: #0b305b">
-                    <h3>Информация</h3>
+                <div class="card" style="background-color: <?= $motivation->color ?>">
+                    <h3><?= $motivation->title ?></h3>
                     <div class="img-wrapper">
-                        <img src="img/information.svg" alt="Информация">
+                        <img src="<?= $motivation->image ?>" alt="<?= $motivation->title ?>">
                     </div>
-                    <p>Одним из важнейших условий успешного бизнеса является наличие места для регулярного размещения актуальной информации о компании. Вам необходим  ресурс, где можно опубликовать подробные сведения о предоставляемых услугах, условиях заказа, контактах и реквизитах.</p>
+                    <p><?= $motivation->description ?></p>
                 </div>
             </div>
-            <div class="col-md-4">
-
-                <div class="card" style="background-color: #33765c">
-                    <h3>Клиенты</h3>
-                    <div class="img-wrapper">
-                        <img src="img/clients.svg" alt="Клиенты">
-                    </div>
-                    <p>Количество пользователей сети стремительно растет. Нельзя пренебрегать огромной аудиторией потенциальных клиентов, которые ищут в интернете ваши товары или услуги.</p>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="background-color: #752100">
-                    <h3>Имидж</h3>
-                    <div class="img-wrapper">
-                        <img src="img/imidge.svg" alt="Имидж">
-                    </div>
-                    <p>Наличие сайта свидетельствует о престиже компании и готовности соответствовать современным трендам. Не стоит оставлять это преимущество вашим конкурентам – заказать сайт под ключ вы можете прямо сейчас.</p>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
