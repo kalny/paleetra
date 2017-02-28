@@ -22,8 +22,7 @@
         "kartik-v/yii2-widget-datepicker": "*",
         "2amigos/yii2-ckeditor-widget" : "2.0",
         "mihaildev/yii2-elfinder": "*",
-        "costa-rico/yii2-images": "dev-master",
-        "himiklab/yii2-recaptcha-widget" : "*"
+        "costa-rico/yii2-images": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

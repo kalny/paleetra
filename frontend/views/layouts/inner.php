@@ -101,7 +101,7 @@ if (!is_null($success)) {
 
 <?= $this->render('_footer') ?>
 
-<?php $this->endBody() ?>
+
 
 <!-- Optimized loading JS Start -->
 <script>var scr = {"scripts":[
@@ -114,6 +114,7 @@ if (!is_null($success)) {
 </script>
 <!-- Optimized loading JS End -->
 
+<?php $this->endBody() ?>
 
 </body>
 </html>
