@@ -21,7 +21,9 @@ $host = 'http://' . $_SERVER['HTTP_HOST'];
 
         <div class="col-sm-8">
             <h1 class="inner-header"><?= $work->title ?></h1>
-            <p><?= $work->description ?></p>
+            <?php foreach ($work->paragraphesArray as $paragraph) : ?>
+                <p><?= $paragraph ?></p>
+            <?php endforeach; ?>
             <p><img src="<?= $work->getImage()->getUrl('748x') ?>" alt="<?= $work->title ?>" class="img-responsive port-image"></p>
             <p>Поделиться ссылкой:</p>
             <div class="social-panel">
