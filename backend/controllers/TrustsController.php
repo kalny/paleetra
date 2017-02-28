@@ -3,17 +3,17 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Motivation;
-use backend\models\MotivationSearch;
+use backend\models\Trust;
+use backend\models\TrustSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\ForbiddenHttpException;
 
 /**
- * MotivationsController implements the CRUD actions for Motivation model.
+ * TrustsController implements the CRUD actions for Trust model.
  */
-class MotivationsController extends Controller
+class TrustsController extends Controller
 {
     /**
      * @inheritdoc
@@ -31,7 +31,7 @@ class MotivationsController extends Controller
     }
 
     /**
-     * Lists all Motivation models.
+     * Lists all Trust models.
      * @return mixed
      * @throws ForbiddenHttpException if the permissions denied
      */
@@ -41,7 +41,7 @@ class MotivationsController extends Controller
             throw new ForbiddenHttpException;
         }
         
-        $searchModel = new MotivationSearch();
+        $searchModel = new TrustSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -51,7 +51,7 @@ class MotivationsController extends Controller
     }
 
     /**
-     * Displays a single Motivation model.
+     * Displays a single Trust model.
      * @param integer $id
      * @return mixed
      * @throws ForbiddenHttpException if the permissions denied
@@ -68,7 +68,7 @@ class MotivationsController extends Controller
     }
 
     /**
-     * Creates a new Motivation model.
+     * Creates a new Trust model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      * @throws ForbiddenHttpException if the permissions denied
@@ -79,14 +79,9 @@ class MotivationsController extends Controller
             throw new ForbiddenHttpException;
         }
         
-        if (! Motivation::checkAccept()) {
-            Yii::$app->getSession()->setFlash('warning', Yii::t('app', 'MES_ALREADY_HAVE_THREE_MOTIVATIONS'));
-            return $this->redirect(['index']);
-        }
-        
-        $model = new Motivation();
+        $model = new Trust();
 
-        $model->scenario = Motivation::SCENARIO_ADMIN_CREATE;
+        $model->scenario = Trust::SCENARIO_ADMIN_CREATE;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -98,7 +93,7 @@ class MotivationsController extends Controller
     }
 
     /**
-     * Updates an existing Motivation model.
+     * Updates an existing Trust model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -112,7 +107,7 @@ class MotivationsController extends Controller
         
         $model = $this->findModel($id);
 
-        $model->scenario = Motivation::SCENARIO_ADMIN_UPDATE;
+        $model->scenario = Trust::SCENARIO_ADMIN_UPDATE;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -124,7 +119,7 @@ class MotivationsController extends Controller
     }
 
     /**
-     * Deletes an existing Motivation model.
+     * Deletes an existing Trust model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -142,15 +137,15 @@ class MotivationsController extends Controller
     }
 
     /**
-     * Finds the Motivation model based on its primary key value.
+     * Finds the Trust model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Motivation the loaded model
+     * @return Trust the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Motivation::findOne($id)) !== null) {
+        if (($model = Trust::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException(Yii::t('app', 'MES_THE_REQUESTED_PAGE_DOES_NOT_EXIST'));

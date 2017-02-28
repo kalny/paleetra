@@ -161,4 +161,9 @@ return [
     'BTN_CREATE_MOTIVATION' => 'Create Motivation',
     'LBL_UPDATE_MOTIVATION' => 'Update Motivation',
     'MES_ALREADY_HAVE_THREE_MOTIVATIONS' => 'Already have 3 Motivations!',
+    'MNU_TRUSTS' => 'Trusts',
+    'LBL_CREATE_TRUST' => 'Create Trust',
+    'LBL_TRUSTS' => 'Trusts',
+    'BTN_CREATE_TRUST' => 'Create Trust',
+    'LBL_UPDATE_TRUST' => 'Update Trust',
 ];

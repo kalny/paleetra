@@ -162,4 +162,9 @@ return [
     'BTN_CREATE_MOTIVATION' => 'Создать мотивацию',
     'LBL_UPDATE_MOTIVATION' => 'Редактирование мотивации',
     'MES_ALREADY_HAVE_THREE_MOTIVATIONS' => 'Уже есть 3 мотивации!',
+    'MNU_TRUSTS' => 'Преимущества',
+    'LBL_CREATE_TRUST' => 'Создание преимущества',
+    'LBL_TRUSTS' => 'Преимущества',
+    'BTN_CREATE_TRUST' => 'Создать преимущество',
+    'LBL_UPDATE_TRUST' => 'Редактирование преимущества',
 ];

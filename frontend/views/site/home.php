@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $motivations \frontend\models\Motivation[] */
+/* @var $trusts \frontend\models\Trust[] */
 /* @var $prices \frontend\models\Price[] */
 /* @var $categories \frontend\models\Category[] */
 /* @var $works \frontend\models\Work[] */
@@ -26,8 +27,7 @@ $this->params['tw_link'] = Yii::$app->params['tw_link'];
         <h2>Зачем вам нужен сайт</h2>
         <p>Что вам даст владение сайтом, и стоит ли тратить на это деньги</p>
     </header>
-
-
+    
     <div class="container">
         <div class="row">
             <?php foreach ($motivations as $motivation) : ?>
@@ -52,38 +52,14 @@ $this->params['tw_link'] = Yii::$app->params['tw_link'];
     </header>
 
     <div class="container">
+        <?php foreach ($trusts as $trust) : ?>
         <div class="point fade-in-up-block">
-            <p>Мы выполняем работу добросовестно. Мы внимательно относимся к деталям, творчески подходим к  выполнению задач.</p>
+            <p><?= $trust->description ?></p>
             <div class="point-svg">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23 11.01L18 11c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5c.55 0 1-.45 1-1v-9c0-.55-.45-.99-1-.99zM23 20h-5v-7h5v7zM20 2H2C.89 2 0 2.89 0 4v12c0 1.1.89 2 2 2h7v2H7v2h8v-2h-2v-2h2v-2H2V4h18v5h2V4c0-1.11-.9-2-2-2zm-8.03 7L11 6l-.97 3H7l2.47 1.76-.94 2.91 2.47-1.8 2.47 1.8-.94-2.91L15 9h-3.03z"/>
-                </svg>
+                <img src="<?= $trust->image ?>" alt="Преимущество">
             </div>
         </div>
-        <div class="point fade-in-up-block">
-            <p>Мы используем в своей работе последние технологии, признанные в  IT сообществе. Мы не изобретаем велосипеды, работаем быстро и качественно.</p>
-            <div class="point-svg">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"/>
-                </svg>
-            </div>
-        </div>
-        <div class="point fade-in-up-block">
-            <p>Уникальный и неповторимый дизайн наши специалисты создадут с учетом всех ваших пожеланий.</p>
-            <div class="point-svg">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4h7V2H4c-1.1 0-2 .9-2 2v7h2V4zm6 9l-4 5h12l-3-4-2.03 2.71L10 13zm7-4.5c0-.83-.67-1.5-1.5-1.5S14 7.67 14 8.5s.67 1.5 1.5 1.5S17 9.33 17 8.5zM20 2h-7v2h7v7h2V4c0-1.1-.9-2-2-2zm0 18h-7v2h7c1.1 0 2-.9 2-2v-7h-2v7zM4 13H2v7c0 1.1.9 2 2 2h7v-2H4v-7z"/>
-                </svg>
-            </div>
-        </div>
-        <div class="point fade-in-up-block">
-            <p>Мы работаем без предоплаты.</p>
-            <div class="point-svg">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-                </svg>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </section>
 
