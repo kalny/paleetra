@@ -94,7 +94,7 @@ return [
     'MES_INCORRECT_USERNAME_OR_PASSWORD' => 'Неправильное имя пользователя или пароль.',
     'MES_YOUR_ACCAUNT_IS_BLOCKED' => 'Ваш аккаунт заблокирован.',
     'MES_YOUR_ACCAUNT_IS_NOT_CONFIRMED' => 'Ваш аккаунт не подтверждён.',
-    'MNU_PALEETRA' => 'Paleetra',
+    'MNU_PALEETRA' => 'Лендинг',
     'MNU_PRICES' => 'Цены',
     'LBL_CREATE_PRICE' => 'Создание цены',
     'LBL_PRICES' => 'Цены',
@@ -167,4 +167,7 @@ return [
     'LBL_TRUSTS' => 'Преимущества',
     'BTN_CREATE_TRUST' => 'Создать преимущество',
     'LBL_UPDATE_TRUST' => 'Редактирование преимущества',
+    'MNU_PROCESS' => 'Рабочий процесс',
+    'LBL_UPDATE_PROCESS' => 'Редактирование рабочего процесса',
+    'BTN_SAVE' => 'Сохранить',
 ];

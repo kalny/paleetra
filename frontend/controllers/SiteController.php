@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use frontend\models\Category;
 use frontend\models\Contact;
 use frontend\models\Motivation;
+use frontend\models\Step;
 use frontend\models\Trust;
 use frontend\models\PhoneForm;
 use frontend\models\Price;
@@ -50,10 +51,12 @@ class SiteController extends Controller
         $works = Work::find()->orderBy('pos ASC')->all();
         $contacts = Contact::find()->orderBy('pos ASC')->all();
         $reviews = Review::find()->all();
+        $step = Step::find()->one();
         
         return $this->render('home', [
             'motivations' => $motivations,
             'trusts' => $trusts,
+            'step' => $step,
             'prices' => $prices,
             'categories' => $categories,
             'works' => $works,

@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $motivations \frontend\models\Motivation[] */
 /* @var $trusts \frontend\models\Trust[] */
+/* @var $step \frontend\models\Step */
 /* @var $prices \frontend\models\Price[] */
 /* @var $categories \frontend\models\Category[] */
 /* @var $works \frontend\models\Work[] */
@@ -73,13 +74,9 @@ $this->params['tw_link'] = Yii::$app->params['tw_link'];
         <div class="timeline-wrapper">
             <div class="vline"></div>
             <ul>
-                <li><span class="fade-in-right-block">Мы общаемся с клиентом, выясняем основные моменты.</span></li>
-                <li><span class="fade-in-right-block">Составляем техзадание, если его нет у заказчика.</span></li>
-                <li><span class="fade-in-right-block">Прорабатываем структуру проекта, создаем схематические макеты.</span></li>
-                <li><span class="fade-in-right-block">Дизайнер создает макет, на этом этапе формируется внешний вид.</span></li>
-                <li><span class="fade-in-right-block">Верстальщик превращает макеты в веб страницы.</span></li>
-                <li><span class="fade-in-right-block">Сверстанные страницы передаются программистам для интеграции с CMS</span></li>
-                <li><span class="fade-in-right-block">Сайт размещается на хостинге, тестируется.</span></li>
+                <?php foreach ($step->stepsArray as $stepItem) : ?>
+                    <li><span class="fade-in-right-block"><?= $stepItem ?></span></li>
+                <?php endforeach; ?>
             </ul>
         </div>
     </div>

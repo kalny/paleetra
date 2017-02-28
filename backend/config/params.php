@@ -37,10 +37,11 @@ return [
             'rbac' => 'watchDashboard'
         ],
         [
-            'title' => Yii::t('app', 'MNU_PALEETRA'), 'controller' => ['motivations', 'trusts', 'prices', 'contacts', 'reviews'], 'icon' => 'fa-cogs',
+            'title' => Yii::t('app', 'MNU_PALEETRA'), 'controller' => ['motivations', 'trusts', 'steps', 'prices', 'contacts', 'reviews'], 'icon' => 'fa-cogs',
             'children' => [
                 ['title' => Yii::t('app', 'MNU_MOTIVATIONS'), 'controller' => 'motivations', 'action' => 'index', 'icon' => 'fa-thumbs-o-up', 'rbac' => 'manageArticles'],
                 ['title' => Yii::t('app', 'MNU_TRUSTS'), 'controller' => 'trusts', 'action' => 'index', 'icon' => 'fa-bullhorn', 'rbac' => 'manageArticles'],
+                ['title' => Yii::t('app', 'MNU_PROCESS'), 'controller' => 'steps', 'action' => 'update', 'icon' => 'fa-line-chart', 'rbac' => 'manageArticles'],
                 ['title' => Yii::t('app', 'MNU_PRICES'), 'controller' => 'prices', 'action' => 'index', 'icon' => 'fa-dollar', 'rbac' => 'manageArticles'],
                 ['title' => Yii::t('app', 'MNU_CONTACTS'), 'controller' => 'contacts', 'action' => 'index', 'icon' => 'fa-headphones', 'rbac' => 'manageArticles'],
                 ['title' => Yii::t('app', 'MNU_REVIEWS'), 'controller' => 'reviews', 'action' => 'index', 'icon' => 'fa-quote-right', 'rbac' => 'manageArticles'],

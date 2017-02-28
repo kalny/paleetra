@@ -166,4 +166,7 @@ return [
     'LBL_TRUSTS' => 'Trusts',
     'BTN_CREATE_TRUST' => 'Create Trust',
     'LBL_UPDATE_TRUST' => 'Update Trust',
+    'MNU_PROCESS' => 'Work Process',
+    'LBL_UPDATE_PROCESS' => 'Update Work process',
+    'BTN_SAVE' => 'Save',
 ];
