@@ -53,3 +53,10 @@ use yii\helpers\Url;
 
     <?php endforeach; ?>
 </ul>
+
+<div style="text-align: center; margin-top: 20px">
+    <!--LiveInternet logo--><a href="//www.liveinternet.ru/click"
+                               target="_blank"><img src="//counter.yadro.ru/logo?29.1"
+                                                    title="LiveInternet: number of visitors and pageviews is shown"
+                                                    alt="" border="0" width="88" height="120"/></a><!--/LiveInternet-->
+</div>

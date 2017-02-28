@@ -71,3 +71,35 @@ use yii\helpers\Html;
     <!-- Custom Browsers Color End -->
 
 </head>
+
+<body>
+
+<?php $this->beginBody() ?>
+
+    <!--LiveInternet counter--><script type="text/javascript">
+    new Image().src = "//counter.yadro.ru/hit?r"+
+        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+        ";"+Math.random();</script><!--/LiveInternet-->
+
+
+<?php
+
+$error = Yii::$app->session->getFlash('error');
+$success = Yii::$app->session->getFlash('success');
+
+if (!is_null($error)) {
+    echo $this->render('_flash', [
+        'message' => $error,
+        'error' => true
+    ]);
+}
+if (!is_null($success)) {
+    echo $this->render('_flash', [
+        'message' => $success,
+        'error' => false
+    ]);
+}
+
+?>

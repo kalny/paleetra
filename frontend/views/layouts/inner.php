@@ -19,30 +19,6 @@ use common\widgets\Alert;
 
 <?= $this->render('_header') ?>
 
-<body>
-
-<?php $this->beginBody() ?>
-
-<?php
-
-$error = Yii::$app->session->getFlash('error');
-$success = Yii::$app->session->getFlash('success');
-
-if (!is_null($error)) {
-    echo $this->render('_flash', [
-        'message' => $error,
-        'error' => true
-    ]);
-}
-if (!is_null($success)) {
-    echo $this->render('_flash', [
-        'message' => $success,
-        'error' => false
-    ]);
-}
-
-?>
-
 <div id="top"></div>
 <div class="wrapper">
     <header class="main-header">
