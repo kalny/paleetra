@@ -79,10 +79,10 @@ class Motivation extends \common\models\Motivation
 
                 $randomString = Yii::$app->getSecurity()->generateRandomString(10);
 
-                $path = Yii::getAlias('@webroot/upload/files/') . $randomString . '.' . $this->svgFile->extension;
+                $path = Yii::getAlias('@webroot/upload/svg/') . $randomString . '.' . $this->svgFile->extension;
                 $this->svgFile->saveAs($path);
 
-                $url = '/upload/files/' . $randomString . '.' . $this->svgFile->extension;
+                $url = '/upload/svg/' . $randomString . '.' . $this->svgFile->extension;
 
                 //add svg image
                 $this->image = $url;
