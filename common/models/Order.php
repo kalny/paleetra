@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use common\components\MailHelper;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\behaviors\TimestampBehavior;
@@ -86,5 +87,13 @@ class Order extends \yii\db\ActiveRecord
             self::STATUS_PROCESS => Yii::t('app', 'LBL_PROCESS'),
             self::STATUS_COMPLETE => Yii::t('app', 'LBL_COMPLETE'),
         ];
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        //Send mail
+        MailHelper::sendMail($this->email, Yii::$app->params['supportEmail'], "Новый заказ - " . $this->phone, $this->body);
+        
+        parent::afterSave($insert, $changedAttributes);
     }
 }

@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
+use common\components\MailHelper;
 
 /**
  * This is the model class for table "call".
@@ -78,5 +79,14 @@ class Call extends \yii\db\ActiveRecord
             self::STATUS_NEW => Yii::t('app', 'LBL_NEW'),
             self::STATUS_COMPLETE => Yii::t('app', 'LBL_COMPLETE'),
         ];
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        //Send mail
+        $body = "Перезвоните клиенту - " . $this->phone;
+        MailHelper::sendMail(Yii::$app->params['adminEmail'], Yii::$app->params['supportEmail'], "Перезвоните!", $body);
+        
+        parent::afterSave($insert, $changedAttributes);
     }
 }
