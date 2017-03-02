@@ -36,6 +36,6 @@ class Work extends \common\models\Work
 
     public function getSocialDescription()
     {
-        return str_replace("\r\n", " ", $this->description);
+        return mb_substr(str_replace("\r\n", " ", $this->description), 0, 400) . "...";
     }
 }
