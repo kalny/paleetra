@@ -36,43 +36,6 @@ $this->params['og_description'] = $work->socialDescription;
             <p><img src="<?= $work->getImage()->getUrl('748x') ?>" alt="<?= $work->title ?>" class="img-responsive port-image"></p>
             <p>Поделиться ссылкой:</p>
             <div class="social-panel">
-                <script>
-                    /*Social*/
-                    Share = {
-                        vkontakte: function(purl, ptitle, pimg, text) {
-                            url  = 'http://vkontakte.ru/share.php?';
-                            url += 'url='          + encodeURIComponent(purl);
-                            url += '&title='       + encodeURIComponent(ptitle);
-                            url += '&description=' + encodeURIComponent(text);
-                            url += '&image='       + encodeURIComponent(pimg);
-                            url += '&noparse=true';
-                            Share.popup(url);
-                        },
-                        facebook: function(purl, ptitle, pimg, text) {
-                            url  = 'http://www.facebook.com/sharer.php?s=100';
-                            url += '&p[title]='     + encodeURIComponent(ptitle);
-                            url += '&p[summary]='   + encodeURIComponent(text);
-                            url += '&p[url]='       + encodeURIComponent(purl);
-                            url += '&p[images][0]=' + encodeURIComponent(pimg);
-                            Share.popup(url);
-                        },
-                        twitter: function(purl, ptitle) {
-                            url  = 'http://twitter.com/share?';
-                            url += 'text='      + encodeURIComponent(ptitle);
-                            url += '&url='      + encodeURIComponent(purl);
-                            url += '&counturl=' + encodeURIComponent(purl);
-                            Share.popup(url);
-                        },
-
-                        popup: function(url) {
-                            window.open(url,'','toolbar=0,status=0,width=626,height=436');
-                        }
-                    };
-                </script>
-                <a class="sb-fb" title="Поделиться на Facebook" onclick="Share.facebook('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->socialDescription ?>')"><i class="fa fa-facebook"></i></a>
-                <a class="sb-vk" title="Поделиться с друзьями ВКонтакте" onclick="Share.vkontakte('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->socialDescription ?>')"><i class="fa fa-vk"></i></a>
-                <a class="sb-tw" title="Написать в Twitter" onclick="Share.twitter('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>')"><i class="fa fa-twitter"></i></a>
-
                 <a class="sb-vk" href="http://vk.com/share.php?url=<?= $pageUrl ?>" target="_blank" title="Поделиться с друзьями ВКонтакте"><i class="fa fa-vk"></i></a>
                 <a class="sb-fb" href="http://www.facebook.com/sharer.php?s=100&p[url]=<?= $pageUrl ?>" target="_blank" title="Опубликовать на Facebook"><i class="fa fa-facebook"></i></a>
                 <a class="sb-tw" href="http://twitter.com/share?url=<?= $pageUrl ?>&counturl=<?= $pageUrl ?>" target="_blank" title="Написать в Twitter"><i class="fa fa-twitter"></i></a>
