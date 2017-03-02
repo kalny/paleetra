@@ -23,6 +23,10 @@ $this->params['keywords'] = Yii::$app->params['keywords'];
 $this->params['vk_link'] = Yii::$app->params['vk_link'];
 $this->params['fb_link'] = Yii::$app->params['fb_link'];
 $this->params['tw_link'] = Yii::$app->params['tw_link'];
+
+$this->params['og_image'] = '';
+$this->params['og_title'] = $this->title;
+$this->params['og_description'] = Yii::$app->params['description'];
 ?>
 
 <!-- Section 1 -->

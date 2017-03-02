@@ -17,6 +17,11 @@ $this->params['fb_link'] = Yii::$app->params['fb_link'];
 $this->params['tw_link'] = Yii::$app->params['tw_link'];
 
 $host = 'http://' . $_SERVER['HTTP_HOST'];
+$pageUrl = $host . Url::to(['portfolio/view', 'slug' => $work->slug]);
+
+$this->params['og_image'] = $host . $work->getImage()->getUrl('500x');
+$this->params['og_title'] = $this->title;
+$this->params['og_description'] = $work->socialDescription;
 ?>
 
 <div class="container">
@@ -67,6 +72,10 @@ $host = 'http://' . $_SERVER['HTTP_HOST'];
                 <a class="sb-fb" title="Поделиться на Facebook" onclick="Share.facebook('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->socialDescription ?>')"><i class="fa fa-facebook"></i></a>
                 <a class="sb-vk" title="Поделиться с друзьями ВКонтакте" onclick="Share.vkontakte('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->socialDescription ?>')"><i class="fa fa-vk"></i></a>
                 <a class="sb-tw" title="Написать в Twitter" onclick="Share.twitter('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>')"><i class="fa fa-twitter"></i></a>
+
+                <a class="sb-vk" href="http://vk.com/share.php?url=<?= $pageUrl ?>" target="_blank" title="Поделиться с друзьями ВКонтакте"><i class="fa fa-vk"></i></a>
+                <a class="sb-fb" href="http://www.facebook.com/sharer.php?s=100&p[url]=<?= $pageUrl ?>" target="_blank" title="Опубликовать на Facebook"><i class="fa fa-facebook"></i></a>
+                <a class="sb-tw" href="http://twitter.com/share?url=<?= $pageUrl ?>&counturl=<?= $pageUrl ?>" target="_blank" title="Написать в Twitter"><i class="fa fa-twitter"></i></a>
             </div>
         </div>
 

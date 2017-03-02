@@ -26,7 +26,10 @@ use yii\helpers\Html;
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Template Basic Images Start -->
-    <meta property="og:image" content="/img/favicon/image.jpg?v=1.0.1">
+    <meta property="og:image" content="<?= Html::encode($this->params['og_image']) ?>">
+    <meta property="og:title" content="<?= Html::encode($this->params['og_title']) ?>">
+    <meta property="og:description" content="<?= Html::encode($this->params['og_description']) ?>">
+    
     <link rel="shortcut icon" href="/img/favicon/favicon.ico?v=1.0.1" type="image/x-icon">
     <link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png?v=1.0.1">
     <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-touch-icon-72x72.png?v=1.0.1">
