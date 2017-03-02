@@ -1,6 +1,5 @@
 <?php
 return [
-    'adminEmail' => 'kalnyanton@gmail.com',
     'title' => 'Веб студия «Палитра»',
     'title_short' => 'Палитра',
     'title_long' => 'Студия веб дизайна «Палитра»',
