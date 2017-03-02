@@ -47,6 +47,16 @@ return [
                 'work/<slug:[-\w]+>.html' => 'portfolio/view',
             ]
         ],
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [],
+                ],
+                'yii\bootstrap\BootstrapPluginAsset' => [
+                    'js'=>[]
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

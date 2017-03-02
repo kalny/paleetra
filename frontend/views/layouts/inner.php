@@ -4,21 +4,18 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use common\widgets\Alert;
+use frontend\assets\InnerAsset;
 
-//AppAsset::register($this);
+InnerAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-
 <?= $this->render('_header') ?>
+<body>
+<?php $this->beginBody() ?>
 
+<!-- Header -->
 <div id="top"></div>
 <div class="wrapper">
     <header class="main-header">
@@ -29,18 +26,18 @@ use common\widgets\Alert;
 
                     <a href="/" class="col-md-3 visible-md-block visible-lg-block logo-wrapper">
                         <div class="logo-wrap">
-                            <img src="/img/logo.svg" alt="Alt">
+                            <img src="/img/logo.svg" alt="<?= Html::encode($this->title) ?>">
                             <span class="logo-descr">Веб студия</span>
-                            <span class="logo-title">Палитра</span>
+                            <span class="logo-title"><?= Html::encode($this->params['title_short']) ?></span>
                         </div>
                     </a>
 
                     <div class="col-md-6 col-sm-8 main-menu">
                         <ul>
-                            <li><a href="/#about">О студии</a></li>
-                            <li><a href="/#portfolio">Работы</a></li>
-                            <li><a href="/#contacts">Контакты</a></li>
-                            <li><a href="/#reviews">Отзывы</a></li>
+                            <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'about']) ?>">О студии</a></li>
+                            <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'portfolio']) ?>">Работы</a></li>
+                            <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'contacts']) ?>">Контакты</a></li>
+                            <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'reviews']) ?>">Отзывы</a></li>
                         </ul>
                     </div>
 
@@ -64,34 +61,22 @@ use common\widgets\Alert;
 
                 </div>
             </div>
-
         </div>
     </header>
 
     <a href="#top" class="control button-up"><i class="fa fa-chevron-circle-up"></i></a>
 
-<?= $content ?>
+    <?= $this->render('_flash') ?>
+
+    <?= $content ?>
 
     <div class="push"></div>
-</div>
+
+</div><!-- Wrapper -->
 
 <?= $this->render('_footer') ?>
 
-
-
-<!-- Optimized loading JS Start -->
-<script>var scr = {"scripts":[
-        {"src" : "/js/libs.min.js?ver=1.0.13", "async" : false},
-        {"src" : "https://use.fontawesome.com/7cebba06a2.js", "async" : true},
-        {"src" : "https://buttons.github.io/buttons.js", "async" : true},
-        {"src" : "/js/common-page.js?ver=1.0.13", "async" : false},
-        {"src" : "/js/ajax.js?ver=1.0.14", "async" : false}
-    ]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
-</script>
-<!-- Optimized loading JS End -->
-
 <?php $this->endBody() ?>
-
 </body>
 </html>
 <?php $this->endPage() ?>

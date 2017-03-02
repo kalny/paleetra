@@ -7,7 +7,7 @@ use yii\web\AssetBundle;
 /**
  * Main frontend application asset bundle.
  */
-class AppAsset extends AssetBundle
+class InnerAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -15,7 +15,7 @@ class AppAsset extends AssetBundle
         'css/main.min.css',
     ];
     public $js = [
-        'js/scripts.min.js',
+        'js/scripts-inner.min.js',
         'js/common.js',
     ];
     public $depends = [

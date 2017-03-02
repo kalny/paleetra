@@ -36,9 +36,9 @@ $this->params['og_description'] = $work->socialDescription;
             <p><img src="<?= $work->getImage()->getUrl('748x') ?>" alt="<?= $work->title ?>" class="img-responsive port-image"></p>
             <p>Поделиться ссылкой:</p>
             <div class="social-panel">
-                <a class="sb-vk" href="http://vk.com/share.php?url=<?= $pageUrl ?>" target="_blank" title="Поделиться с друзьями ВКонтакте"><i class="fa fa-vk"></i></a>
-                <a class="sb-fb" href="http://www.facebook.com/sharer.php?s=100&p[url]=<?= $pageUrl ?>" target="_blank" title="Опубликовать на Facebook"><i class="fa fa-facebook"></i></a>
-                <a class="sb-tw" href="http://twitter.com/share?url=<?= $pageUrl ?>&counturl=<?= $pageUrl ?>" target="_blank" title="Написать в Twitter"><i class="fa fa-twitter"></i></a>
+                <a class="sb-vk share-button" href="http://vk.com/share.php?url=<?= $pageUrl ?>" target="_blank" title="Поделиться с друзьями ВКонтакте"><i class="fa fa-vk"></i></a>
+                <a class="sb-fb share-button" href="http://www.facebook.com/sharer.php?s=100&p[url]=<?= $pageUrl ?>" target="_blank" title="Опубликовать на Facebook"><i class="fa fa-facebook"></i></a>
+                <a class="sb-tw share-button" href="http://twitter.com/share?url=<?= $pageUrl ?>&counturl=<?= $pageUrl ?>" target="_blank" title="Написать в Twitter"><i class="fa fa-twitter"></i></a>
             </div>
         </div>
 
@@ -62,7 +62,7 @@ $this->params['og_description'] = $work->socialDescription;
                     Эта работа доступна по сылке: <a href="<?= $work->link ?>" target="_blank"><?= $work->link ?></a>
                 </div>
             <?php endif; ?>
-            <a href="/" class="button btn-primary btn-main">Заказать сайт</a>
+            <a href="<?= \yii\helpers\Url::to(['site/home', '#'=>'get-site']) ?>" class="button btn-primary btn-main">Заказать сайт</a>
         </div>
     </div>
 </div>

@@ -6,17 +6,14 @@
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
 
-//AppAsset::register($this);
-
+AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-
 <?= $this->render('_header') ?>
-
-
+<body>
+<?php $this->beginBody() ?>
 
 <!-- Header -->
 <div id="top"></div>
@@ -28,7 +25,7 @@ use frontend\assets\AppAsset;
 
                 <div class="col-md-3 visible-md-block visible-lg-block logo-wrapper">
                     <div class="logo-wrap">
-                        <img src="img/logo.svg" alt="<?= Html::encode($this->title) ?>">
+                        <img src="/img/logo.svg" alt="<?= Html::encode($this->title) ?>">
                         <span class="logo-descr">Веб студия</span>
                         <span class="logo-title"><?= Html::encode($this->params['title_short']) ?></span>
                     </div>
@@ -45,17 +42,14 @@ use frontend\assets\AppAsset;
 
                 <div class="col-md-3 col-sm-4 phone-wrapper">
                     <div class="phonenumber">
-                        <span><?= Html::encode($this->params['phone']) ?></span>
+                        <span>+3 8(099) 008 20 17</span>
                         <a class="phoneme-popup-link" href="#phoneme-popup">Перезвоните мне</a>
-
-
 
                         <!-- START POPUP WINDOW -->
                         <div id="phoneme-popup" class="popup-window white-popup mfp-hide">
                             <p class="popup-header">Скажите нам номер вашего телефона, и мы вам перезвоним.</p>
 
                             <?= $this->render('_phone_form') ?>
-
                         </div>
                         <!-- END POPUP WINDOW -->
 
@@ -82,7 +76,7 @@ use frontend\assets\AppAsset;
                 </div>
 
                 <div class="col-md-6 visible-md-block visible-lg-block main-header-image">
-                    <img src="img/team.jpg" alt="<?= Html::encode($this->title) ?>" class="img-responsive">
+                    <img src="/img/team.jpg" alt="<?= Html::encode($this->title) ?>" class="img-responsive">
                     <span><?= Html::encode($this->params['title_long']) ?></span>
                 </div>
 
@@ -94,24 +88,13 @@ use frontend\assets\AppAsset;
 
 <a href="#top" class="control button-up"><i class="fa fa-chevron-circle-up"></i></a>
 
+<?= $this->render('_flash') ?>
+
 <?= $content ?>
 
 <?= $this->render('_footer') ?>
 
-
-
-<!-- Optimized loading JS Start -->
-<script>var scr = {"scripts":[
-        {"src" : "/js/libs.min.js?ver=1.0.13", "async" : false},
-        {"src" : "https://use.fontawesome.com/7cebba06a2.js", "async" : true},
-        {"src" : "/js/common.js?ver=1.0.13", "async" : false},
-        {"src" : "/js/ajax.js?ver=1.0.14", "async" : false}
-    ]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
-</script>
-<!-- Optimized loading JS End -->
-
 <?php $this->endBody() ?>
-
 </body>
 </html>
 <?php $this->endPage() ?>

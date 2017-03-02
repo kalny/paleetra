@@ -9,13 +9,24 @@
 /* @var $message string */
 /* @var $error boolean */
 
-$type = ($error) ? 'error' : 'success';
-
+$error = Yii::$app->session->getFlash('error');
+$success = Yii::$app->session->getFlash('success');
+    
 ?>
-
-<div class="flash-message fl-<?= $type ?>">
-    <img src="/img/<?= $type ?>.svg" alt="<?= ucfirst($type) ?>">
-    <?= $message ?>
+    
+    
+<?php if (!is_null($error)) :  ?>
+<div class="flash-message fl-error">
+    <img src="/img/error.svg" alt="Error">
+    <?= $error ?>
     <a class="close" href=""><i class="fa fa-close"></i></a>
 </div>
+<?php endif; ?>
 
+<?php if (!is_null($success)) :  ?>
+    <div class="flash-message fl-success">
+        <img src="/img/success.svg" alt="Success">
+        <?= $success ?>
+        <a class="close" href=""><i class="fa fa-close"></i></a>
+    </div>
+<?php endif; ?>
