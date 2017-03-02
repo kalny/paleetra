@@ -33,4 +33,9 @@ class Work extends \common\models\Work
 
         return $paragraphesArray;
     }
+
+    public function getSocialDescription()
+    {
+        return str_replace("\r\n", " ", $this->description);
+    }
 }

@@ -64,8 +64,8 @@ $host = 'http://' . $_SERVER['HTTP_HOST'];
                         }
                     };
                 </script>
-                <a class="sb-fb" title="Поделиться на Facebook" onclick="Share.facebook('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->description ?>')"><i class="fa fa-facebook"></i></a>
-                <a class="sb-vk" title="Поделиться с друзьями ВКонтакте" onclick="Share.vkontakte('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>', '<?= $work->description ?>')"><i class="fa fa-vk"></i></a>
+                <a class="sb-fb" title="Поделиться на Facebook" onclick="Share.facebook('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->socialDescription ?>')"><i class="fa fa-facebook"></i></a>
+                <a class="sb-vk" title="Поделиться с друзьями ВКонтакте" onclick="Share.vkontakte('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>','<?= $host ?><?= $work->getImage()->getUrl('500x') ?>','<?= $work->socialDescription ?>')"><i class="fa fa-vk"></i></a>
                 <a class="sb-tw" title="Написать в Twitter" onclick="Share.twitter('<?= $host ?><?= Url::to(['portfolio/view', 'slug' => $work->slug]) ?>','<?= $this->title ?>')"><i class="fa fa-twitter"></i></a>
             </div>
         </div>
