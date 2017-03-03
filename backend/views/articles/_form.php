@@ -36,6 +36,6 @@ use mihaildev\elfinder\ElFinder;
 
     <?php ActiveForm::end(); ?>
 
-    <?php $this->registerJsFile('/js/ckeditor-fix.js', ['depends' => 'backend\assets\DashboardAsset']) ?>
+    <?php $this->registerJsFile('/admin/js/ckeditor-fix.js', ['depends' => 'backend\assets\DashboardAsset']) ?>
 
 </div>
