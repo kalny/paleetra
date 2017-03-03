@@ -16,7 +16,11 @@ use mihaildev\elfinder\ElFinder;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'seo_description')->textarea() ?>
+    <?= $form->field($model, 'seo_keywords')->textarea() ?>
 
     <?= $form->field($model, 'content')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],

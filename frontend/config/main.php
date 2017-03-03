@@ -45,6 +45,8 @@ return [
             'rules' => [
                 '/' => 'site/home',
                 'work/<slug:[-\w]+>.html' => 'portfolio/view',
+                'article/<slug:[-\w]+>.html' => 'articles/view',
+                'articles' => 'articles/index',
             ]
         ],
         'assetManager' => [

@@ -169,4 +169,7 @@ return [
     'MNU_PROCESS' => 'Work Process',
     'LBL_UPDATE_PROCESS' => 'Update Work process',
     'BTN_SAVE' => 'Save',
-];
+    'MES_THIS_SLUG_HAS_ALREADY_BEEN_TAKEN' => 'This slug has already been taken',
+    'LBL_SEO_DESCRIPTION' => 'SEO Description',
+    'LBL_SEO_KEYWORDS' => 'SEO Keywords',
+ ];

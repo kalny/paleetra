@@ -41,6 +41,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attributes' => [
                     'id',
                     'name',
+                    'slug',
+                    'seo_description',
+                    'seo_keywords',
                     'description',
                 ],
             ]) ?>
