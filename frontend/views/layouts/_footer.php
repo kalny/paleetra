@@ -19,6 +19,13 @@ use yii\helpers\Html;
                     <span class="logo-descr">Веб студия</span>
                     <span class="logo-title"><?= Html::encode($this->params['title_short']) ?></span>
                 </div>
+                <div style="width: 1px; height: 1px; opacity: 0; overflow: hidden;">
+                    <!--LiveInternet logo--><a href="//www.liveinternet.ru/click"
+                                               target="_blank"><img src="//counter.yadro.ru/logo?29.1"
+                                                                    title="LiveInternet: number of visitors and pageviews is shown"
+                                                                    alt="" border="0" width="88" height="120"/></a><!--/LiveInternet-->
+                </div>
+
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="social-buttons">

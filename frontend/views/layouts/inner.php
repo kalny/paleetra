@@ -12,8 +12,6 @@ InnerAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <?= $this->render('_header') ?>
-<body>
-<?php $this->beginBody() ?>
 
 <!-- Header -->
 <div id="top"></div>
