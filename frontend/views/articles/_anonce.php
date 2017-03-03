@@ -19,4 +19,4 @@ $url = Url::to(['articles/view', 'slug' => $model->slug]);
 
 <h2 class="inner-header"><a href="<?= $url ?>"><?= $model->name ?></a></h2>
 <?= HtmlPurifier::process($model->getBody(Article::CT_ANONCE)) ?>
-<p><a href="<?= $url ?>">Читать статью »</a></p>
+<p><a href="<?= $url ?>">Читать полностью »</a></p>

@@ -49,8 +49,8 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'content'], 'required'],
-            [['content'], 'string'],
+            [['name', 'content', 'short_anonce'], 'required'],
+            [['content', 'short_anonce'], 'string'],
             [['name'], 'string', 'max' => 150],
             [['description'], 'string', 'max' => 250],
             ['slug', 'unique', 'targetClass' => self::className(), 'message' => Yii::t('app', 'MES_THIS_SLUG_HAS_ALREADY_BEEN_TAKEN')],
@@ -70,6 +70,7 @@ class Article extends \yii\db\ActiveRecord
             'name' => Yii::t('app', 'LBL_NAME'),
             'description' => Yii::t('app', 'LBL_DESCRIPTION'),
             'content' => Yii::t('app', 'LBL_CONTENT'),
+            'short_anonce' => Yii::t('app', 'LBL_SHORT_ANONCE'),
             'slug' => Yii::t('app', 'LBL_SLUG'),
             'seo_description' => Yii::t('app', 'LBL_SEO_DESCRIPTION'),
             'seo_keywords' => Yii::t('app', 'LBL_SEO_KEYWORDS'),

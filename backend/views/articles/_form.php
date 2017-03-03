@@ -22,6 +22,8 @@ use mihaildev\elfinder\ElFinder;
     <?= $form->field($model, 'seo_description')->textarea() ?>
     <?= $form->field($model, 'seo_keywords')->textarea() ?>
 
+    <?= $form->field($model, 'short_anonce')->textarea() ?>
+
     <?= $form->field($model, 'content')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'full',

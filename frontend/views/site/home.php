@@ -9,8 +9,11 @@
 /* @var $works \frontend\models\Work[] */
 /* @var $contacts \frontend\models\Contact[] */
 /* @var $reviews \frontend\models\Review[] */
+/* @var $articles \frontend\models\Article[] */
 
 use yii\helpers\Url;
+use yii\helpers\HtmlPurifier;
+use frontend\models\Article;
 
 $this->title = Yii::$app->params['title'];
 $this->params['title_short'] = Yii::$app->params['title_short'];
@@ -237,6 +240,34 @@ $this->params['og_description'] = Yii::$app->params['description'];
 </section>
 
 <!-- Section 8 -->
+<section id="articles" class="section-dark">
+    <header>
+        <h2>Публикации нашей студии</h2>
+        <p>На нашем сайте время от времени мы публикуем статьи, новости и акции.</p>
+    </header>
+
+    <div class="container">
+        <div class="articles-container">
+            <div class="row">
+                <?php foreach($articles as $article) : ?>
+                <div class="col-sm-4">
+                    <div class="article-card">
+                        <h3><?= $article->name ?></h3>
+                        <div class="img-wrap"><img src="<?= $article->getImage() ?>" alt="<?= $article->name ?>" class="img-responsive"></div>
+                        <p class="body"><?= HtmlPurifier::process($article->short_anonce) ?></p>
+                        <p><a href="<?= Url::to(['articles/view', 'slug' => $article->slug]) ?>">Читать полностью »</a></p>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <a href="<?= Url::to(['articles/index']) ?>" class="button btn-primary btn-main">Все публикации</a>
+    </div>
+</section>
+
+
+<!-- Section 9 -->
 <section id="get-site" class="section-semi-dark">
     <header>
         <h2>Заказать сайт сейчас</h2>

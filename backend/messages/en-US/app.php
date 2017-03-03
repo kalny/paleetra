@@ -172,4 +172,5 @@ return [
     'MES_THIS_SLUG_HAS_ALREADY_BEEN_TAKEN' => 'This slug has already been taken',
     'LBL_SEO_DESCRIPTION' => 'SEO Description',
     'LBL_SEO_KEYWORDS' => 'SEO Keywords',
+    'LBL_SHORT_ANONCE' => 'Short Anonce',
  ];

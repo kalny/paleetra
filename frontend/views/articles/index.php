@@ -39,7 +39,7 @@ $this->params['og_description'] = $this->params['description'];
 
         <div class="col-sm-4">
             <div class="sidepanel">
-                Последние статьи на сайте:
+                Последние публикации на сайте:
                 <ul>
                     <?php foreach ($lastArticles as $art): ?>
                         <li><a href="<?= Url::to(['articles/view', 'slug' => $art->slug]) ?>"><?= $art->name ?></a></li>

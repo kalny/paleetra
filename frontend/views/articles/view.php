@@ -47,7 +47,7 @@ $this->params['og_description'] = $this->params['description'];
         <div class="col-sm-4">
 
             <div class="sidepanel">
-                Последние статьи на сайте:
+                Последние публикации на сайте:
                 <ul>
                     <?php foreach ($lastArticles as $art): ?>
                         <li><a href="<?= Url::to(['articles/view', 'slug' => $art->slug]) ?>"><?= $art->name ?></a></li>
@@ -55,7 +55,7 @@ $this->params['og_description'] = $this->params['description'];
                 </ul>
             </div>
             <div class="sidepanel">
-                Вы также можете просмотреть <a href="<?= Url::to(['articles/index']) ?>">список всех статей</a>
+                Вы также можете просмотреть <a href="<?= Url::to(['articles/index']) ?>">список всех публикаций</a>
             </div>
             <a href="<?= \yii\helpers\Url::to(['site/home', '#'=>'get-site']) ?>" class="button btn-primary btn-main">Заказать сайт</a>
         </div>

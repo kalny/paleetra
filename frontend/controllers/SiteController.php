@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use frontend\models\Article;
 use frontend\models\Category;
 use frontend\models\Contact;
 use frontend\models\Motivation;
@@ -46,12 +47,14 @@ class SiteController extends Controller
     {
         $motivations = Motivation::find()->all();
         $trusts = Trust::find()->all();
+        $step = Step::find()->one();
         $prices = Price::find()->all();
         $categories = Category::find()->all();
         $works = Work::find()->orderBy('pos ASC')->all();
         $contacts = Contact::find()->orderBy('pos ASC')->all();
         $reviews = Review::find()->all();
-        $step = Step::find()->one();
+        $articles = Article::find()->orderBy('created_at DESC')->limit(3)->all();
+
         
         return $this->render('home', [
             'motivations' => $motivations,
@@ -62,6 +65,7 @@ class SiteController extends Controller
             'works' => $works,
             'contacts' => $contacts,
             'reviews' => $reviews,
+            'articles' => $articles,
         ]);
     }
     
