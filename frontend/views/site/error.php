@@ -14,7 +14,7 @@ $this->context->layout = 'error_layout';
 ?>
 
 <div class="container">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 style="color: #333"><?= Html::encode($this->title) ?></h1>
 
     <div class="alert alert-danger">
         <?= nl2br(Html::encode($message)) ?>

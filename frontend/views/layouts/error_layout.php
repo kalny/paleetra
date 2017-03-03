@@ -8,13 +8,11 @@ use frontend\assets\AppAsset;
 AppAsset::register($this);
 
 ?>
-
 <?php $this->beginPage() ?>
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <?= $this->render('_header') ?>
+
 <body>
 <?php $this->beginBody() ?>
 
