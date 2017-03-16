@@ -173,4 +173,11 @@ return [
     'LBL_SEO_DESCRIPTION' => 'SEO Description',
     'LBL_SEO_KEYWORDS' => 'SEO Keywords',
     'LBL_SHORT_ANONCE' => 'Short Anonce',
+    'MNU_BRIFS' => 'Briefs',
+    'LBL_NEW_BRIFS' => 'New Briefs',
+    'LBL_SEE_ALL_BRIFS' => 'See All Briefs',
+    'LBL_CREATE_BRIF' => 'Create Brief',
+    'LBL_BRIFS' => 'Briefs',
+    'LBL_UPDATE_BRIF' => 'Update Brief',
+    'BTN_CREATE_BRIF' => 'Create Brief',
  ];

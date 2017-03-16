@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
-    'language' => 'ru',
+    'language' => 'ru-RU',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -47,6 +47,7 @@ return [
                 'work/<slug:[-\w]+>.html' => 'portfolio/view',
                 'article/<slug:[-\w]+>.html' => 'articles/view',
                 'articles' => 'articles/index',
+                'brief' => 'brif/form',
             ]
         ],
         'assetManager' => [

@@ -63,7 +63,7 @@ class Order extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'LBL_ID'),
-            'created_at' => Yii::t('app', 'LBL_CREATED_AD'),
+            'created_at' => Yii::t('app', 'LBL_CREATED_AT'),
             'phone' => Yii::t('app', 'LBL_PHONE'),
             'email' => Yii::t('app', 'LBL_EMAIL'),
             'body' => Yii::t('app', 'LBL_CONTENT'),

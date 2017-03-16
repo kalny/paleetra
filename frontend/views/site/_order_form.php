@@ -10,6 +10,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 
 if(isset($this->context->orderForm) && $this->context->orderForm != null)
 {
@@ -43,6 +44,7 @@ else{
 
 <div class="form-group">
     <?= Html::submitButton('Отправить заявку', ['class' => 'button btn-primary btn-main']) ?>
+    <a href="<?= Url::to(['brif/form']) ?>" class="button btn-primary btn-main">Заполнить бриф</a>
 </div>
 
 <?php ActiveForm::end(); ?>

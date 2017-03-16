@@ -49,10 +49,11 @@ return [
             'rbac' => 'watchDashboard'
         ],
         [
-            'title' => Yii::t('app', 'MNU_EVENTS'), 'controller' => ['orders', 'calls'], 'icon' => 'fa-bell-o',
+            'title' => Yii::t('app', 'MNU_EVENTS'), 'controller' => ['orders', 'calls', 'brifs'], 'icon' => 'fa-bell-o',
             'children' => [
                 ['title' => Yii::t('app', 'MNU_ORDERS'), 'controller' => 'orders', 'action' => 'index', 'icon' => 'fa-money', 'rbac' => 'manageArticles', 'badge' => 'bg-red', 'model' => \backend\models\Order::className()],
                 ['title' => Yii::t('app', 'MNU_CALLS'), 'controller' => 'calls', 'action' => 'index', 'icon' => 'fa-phone', 'rbac' => 'manageArticles', 'badge' => 'bg-red', 'model' => \backend\models\Call::className()],
+                ['title' => Yii::t('app', 'MNU_BRIFS'), 'controller' => 'brifs', 'action' => 'index', 'icon' => 'fa-book', 'rbac' => 'manageArticles', 'badge' => 'bg-red', 'model' => \backend\models\Brif::className()],
             ],
             'rbac' => 'watchDashboard'
         ],
