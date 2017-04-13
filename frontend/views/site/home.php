@@ -35,7 +35,7 @@ $this->params['og_description'] = Yii::$app->params['description'];
 <!-- Animation -->
 <section id="animation" class="section-dark section-no-triangle">
     <div class="main-animation">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Rrdu2b_p8Dg" frameborder="0" allowfullscreen></iframe>
+        <iframe width="784" height="441" src="https://www.youtube.com/embed/Rrdu2b_p8Dg" frameborder="0" allowfullscreen></iframe>
     </div>
 </section>
 
