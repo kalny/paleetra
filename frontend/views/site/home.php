@@ -32,8 +32,15 @@ $this->params['og_title'] = $this->title;
 $this->params['og_description'] = Yii::$app->params['description'];
 ?>
 
+<!-- Animation -->
+<section id="animation" class="section-dark section-no-triangle" style="padding: 0">
+    <div class="main-animation" style="position: relative;padding-bottom: 56.25%;height: 0;">
+        <iframe src="https://www.youtube.com/embed/Rrdu2b_p8Dg" frameborder="0" allowfullscreen style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></iframe>
+    </div>
+</section>
+
 <!-- Section 1 -->
-<section id="for-what" class="section-light section-no-triangle">
+<section id="for-what" class="section-light">
     <header>
         <h2>Зачем вам нужен сайт</h2>
         <p>Что вам даст владение сайтом, и стоит ли тратить на это деньги</p>
