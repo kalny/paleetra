@@ -37,6 +37,8 @@ use yii\helpers\Html;
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
+    <meta name="yandex-verification" content="db7e25c77c950e61" />
+
     <?php $this->head() ?>
 
 </head>
