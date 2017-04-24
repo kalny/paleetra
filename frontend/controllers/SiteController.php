@@ -68,5 +68,14 @@ class SiteController extends Controller
             'articles' => $articles,
         ]);
     }
+
+    public function actionContacts()
+    {
+        $this->layout = 'inner';
+
+        $contacts = Contact::find()->orderBy('pos ASC')->all();
+
+        return $this->render('contacts', ['contacts' => $contacts]);
+    }
     
 }

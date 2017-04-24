@@ -48,6 +48,7 @@ return [
                 'article/<slug:[-\w]+>.html' => 'articles/view',
                 'articles' => 'articles/index',
                 'brief' => 'brif/form',
+                'contacts' => 'site/contacts',
             ]
         ],
         'assetManager' => [

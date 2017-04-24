@@ -205,7 +205,7 @@ $this->params['og_description'] = Yii::$app->params['description'];
 <!-- Section 6 -->
 <section id="contacts" class="section-semi-dark">
     <header>
-        <h2>Контакты</h2>
+        <h2>Команда</h2>
         <p>С кем можно связаться</p>
     </header>
 

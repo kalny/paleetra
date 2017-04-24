@@ -33,9 +33,10 @@ InnerAsset::register($this);
                     <div class="col-md-6 col-sm-8 main-menu">
                         <ul>
                             <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'portfolio']) ?>">Работы</a></li>
-                            <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'contacts']) ?>">Контакты</a></li>
+                            <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'contacts']) ?>">Команда</a></li>
                             <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'reviews']) ?>">Отзывы</a></li>
                             <li><a class="control" href="<?= \yii\helpers\Url::to(['site/home', '#'=>'articles']) ?>">Новости</a></li>
+                            <li><a href="<?= \yii\helpers\Url::to(['site/contacts']) ?>">Контакты</a></li>
                         </ul>
                     </div>
 

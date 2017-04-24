@@ -32,9 +32,11 @@ AppAsset::register($this);
                 <div class="col-md-6 col-sm-8 main-menu">
                     <ul>
                         <li><a class="control" href="#portfolio">Работы</a></li>
-                        <li><a class="control" href="#contacts">Контакты</a></li>
+                        <li><a class="control" href="#contacts">Команда</a></li>
                         <li><a class="control" href="#reviews">Отзывы</a></li>
                         <li><a class="control" href="#articles">Новости</a></li>
+                        <li><a href="<?= \yii\helpers\Url::to(['site/contacts']) ?>">Контакты</a></li>
+
                     </ul>
                 </div>
 
