@@ -1,6 +1,8 @@
 Order Allow,Deny
 Allow from all
 
+php_value short_open_tag 0
+
 
 RewriteEngine on
 
