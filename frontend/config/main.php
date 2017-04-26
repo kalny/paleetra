@@ -49,6 +49,7 @@ return [
                 'articles' => 'articles/index',
                 'brief' => 'brif/form',
                 'contacts' => 'site/contacts',
+                'sitemap.xml' => 'site/sitemap',
             ]
         ],
         'assetManager' => [

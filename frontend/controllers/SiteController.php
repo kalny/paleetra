@@ -77,5 +77,20 @@ class SiteController extends Controller
 
         return $this->render('contacts', ['contacts' => $contacts]);
     }
+
+    public function actionSitemap()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_RAW;
+        $headers = Yii::$app->response->headers;
+        $headers->add('Content-Type', 'text/xml');
+
+        $works = Work::find()->orderBy('pos ASC')->all();
+        $articles = Article::find()->orderBy('created_at DESC')->limit(3)->all();
+        
+        return $this->renderPartial('sitemap', [
+            'works' => $works,
+            'articles' => $articles,
+        ]);
+    }
     
 }
