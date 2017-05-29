@@ -39,6 +39,8 @@ use yii\helpers\Html;
 
     <meta name="yandex-verification" content="db7e25c77c950e61" />
 
+    <meta name='freelancehunt' content='6dfbe8494a03511' />
+
     <?php $this->head() ?>
 
 </head>
