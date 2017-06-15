@@ -237,4 +237,5 @@ return [
     'LBL_PHONES' => 'Телефоны',
     'LBL_FAX' => 'Факс',
     'LBL_INDUSTRIES' => 'Отрасли компании',
+    'MNU_INDUSTRIES' => 'Отрасли',
 ];

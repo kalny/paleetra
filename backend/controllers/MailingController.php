@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\IndustriesSearch;
 use Yii;
 use backend\models\Companies;
 use backend\models\CompaniesSearch;
@@ -45,6 +46,26 @@ class MailingController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Lists all Industries models.
+     * @return mixed
+     * @throws ForbiddenHttpException if the permissions denied
+     */
+    public function actionIndustries()
+    {
+        if (! \Yii::$app->user->can('manageArticles')) {
+            throw new ForbiddenHttpException;
+        }
+
+        $searchModel = new IndustriesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('industries', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
