@@ -189,4 +189,5 @@ return [
     'LBL_FAX' => 'Fax',
     'LBL_INDUSTRIES' => 'Industries',
     'MNU_INDUSTRIES' => 'Industries',
+    'LBL_INDUSTRIES2' => 'All Industries',
  ];

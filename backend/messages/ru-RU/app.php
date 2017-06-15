@@ -238,4 +238,5 @@ return [
     'LBL_FAX' => 'Факс',
     'LBL_INDUSTRIES' => 'Отрасли компании',
     'MNU_INDUSTRIES' => 'Отрасли',
+    'LBL_INDUSTRIES2' => 'Все отрасли',
 ];
