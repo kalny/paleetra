@@ -180,4 +180,12 @@ return [
     'LBL_BRIFS' => 'Briefs',
     'LBL_UPDATE_BRIF' => 'Update Brief',
     'BTN_CREATE_BRIF' => 'Create Brief',
+    'MNU_MAILING' => 'Mailing',
+    'MNU_ADDRESSES' => 'Addresses',
+    'LBL_COMPANIES' => 'Companies Addresses',
+    'LBL_SITE' => 'Site',
+    'LBL_ADDRESS' => 'Address',
+    'LBL_PHONES' => 'Phones',
+    'LBL_FAX' => 'Fax',
+    'LBL_INDUSTRIES' => 'Industries',
  ];
