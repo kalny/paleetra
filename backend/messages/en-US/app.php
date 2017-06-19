@@ -201,4 +201,5 @@ return [
     'LBL_LETTER' => 'Letter',
     'LBL_PAUSE' => 'Pause',
     'LBL_START' => 'Start',
+    'LBL_PROGRESS' => 'Progress',
  ];

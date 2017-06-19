@@ -250,4 +250,5 @@ return [
     'LBL_LETTER' => 'Письмо',
     'LBL_PAUSE' => 'Приостановить',
     'LBL_START' => 'Возобновить',
+    'LBL_PROGRESS' => 'Прогресс',
 ];

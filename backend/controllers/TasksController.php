@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\ForbiddenHttpException;
+use backend\models\Companies;
 
 /**
  * TasksController implements the CRUD actions for Task model.
@@ -62,8 +63,12 @@ class TasksController extends Controller
             throw new ForbiddenHttpException;
         }
         
+        $model = $this->findModel($id);
+        
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'completedCompanies' => $model->getStates()->count(),
+            'allCompanies' => Companies::find()->count()
         ]);
     }
 

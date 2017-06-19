@@ -5,6 +5,8 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Task */
+/* @var $completedCompanies integer */
+/* @var $allCompanies integer */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_TASKS'), 'url' => ['index']];
@@ -51,6 +53,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'content:ntext',
                 ],
             ]) ?>
+        </div>
+
+    </div>
+
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title"><?= Yii::t('app', 'LBL_PROGRESS') ?></h3>
+        </div>
+
+        <div class="box-body">
+            Всего предприятий: <?= $allCompanies ?><br>
+            Обработано: <?= $completedCompanies ?>
+            (<?= floor ($completedCompanies / ($allCompanies / 100)) ?>%)
         </div>
 
     </div>
