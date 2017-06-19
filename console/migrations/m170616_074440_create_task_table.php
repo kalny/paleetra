@@ -25,7 +25,7 @@ class m170616_074440_create_task_table extends Migration
             'status' => $this->smallInteger(1)->notNull()->defaultValue(0),
             'rate' => $this->integer()->notNull()->defaultValue(1),
             'content' => $this->text()->notNull(),
-        ]);
+        ], $tableOptions);
 
         $this->createTable('{{%states}}', [
             'task_id' => $this->integer()->notNull(),
