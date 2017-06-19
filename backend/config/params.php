@@ -66,10 +66,11 @@ return [
             'rbac' => 'watchDashboard'
         ],
         [
-            'title' => Yii::t('app', 'MNU_MAILING'), 'controller' => ['mailing'], 'icon' => 'fa-envelope-o',
+            'title' => Yii::t('app', 'MNU_MAILING'), 'controller' => ['mailing', 'tasks'], 'icon' => 'fa-envelope-o',
             'children' => [
                 ['title' => Yii::t('app', 'MNU_ADDRESSES'), 'controller' => 'mailing', 'action' => 'index', 'icon' => 'fa-users', 'rbac' => 'manageArticles'],
                 ['title' => Yii::t('app', 'MNU_INDUSTRIES'), 'controller' => 'mailing', 'action' => 'industries', 'icon' => 'fa-pie-chart', 'rbac' => 'manageArticles'],
+                ['title' => Yii::t('app', 'MNU_TASKS'), 'controller' => 'tasks', 'action' => 'index', 'icon' => 'fa-tasks', 'rbac' => 'manageArticles'],
             ],
             'rbac' => 'watchDashboard'
         ]
