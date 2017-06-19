@@ -6,6 +6,11 @@ class m170619_073253_change_task_charset extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+        }
+
         $this->dropForeignKey('fk-state-task', '{{%state}}');
 
         $this->dropTable('{{%task}}');
@@ -18,13 +23,18 @@ class m170619_073253_change_task_charset extends Migration
             'status' => $this->smallInteger(1)->notNull()->defaultValue(0),
             'rate' => $this->integer()->notNull()->defaultValue(1),
             'content' => $this->text()->notNull(),
-        ], 'DEFAULT CHARSET=utf8');
+        ], $tableOptions);
 
         $this->addForeignKey('fk-state-task', '{{%state}}', 'task_id', '{{%task}}', 'id', 'CASCADE', 'CASCADE');
     }
 
     public function down()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+        }
+
         $this->dropForeignKey('fk-state-task', '{{%state}}');
 
         $this->dropTable('{{%task}}');
@@ -37,7 +47,7 @@ class m170619_073253_change_task_charset extends Migration
             'status' => $this->smallInteger(1)->notNull()->defaultValue(0),
             'rate' => $this->integer()->notNull()->defaultValue(1),
             'content' => $this->text()->notNull(),
-        ], 'DEFAULT CHARSET=latin1');
+        ], $tableOptions);
 
         $this->addForeignKey('fk-state-task', '{{%state}}', 'task_id', '{{%task}}', 'id', 'CASCADE', 'CASCADE');
     }
