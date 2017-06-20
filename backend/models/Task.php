@@ -15,6 +15,7 @@ use yii\helpers\ArrayHelper;
  * @property string $description
  * @property integer $status
  * @property integer $rate
+ * @property string $subject
  * @property string $content
  *
  * @property State[] $states
@@ -46,10 +47,10 @@ class Task extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'content'], 'required'],
+            [['name', 'description', 'subject', 'content'], 'required'],
             [['created_at', 'rate'], 'integer'],
             [['description', 'content'], 'string'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'subject'], 'string', 'max' => 255],
 
             ['rate', 'default', 'value' => 1],
 
@@ -71,6 +72,7 @@ class Task extends \yii\db\ActiveRecord
             'description' => Yii::t('app', 'LBL_DESCRIPTION'),
             'status' => Yii::t('app', 'LBL_STATUS'),
             'rate' => Yii::t('app', 'LBL_RATE'),
+            'subject' => Yii::t('app', 'LBL_SUBJECT'),
             'content' => Yii::t('app', 'LBL_CONTENT'),
         ];
     }

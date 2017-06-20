@@ -20,6 +20,8 @@ use mihaildev\elfinder\ElFinder;
 
     <?= $form->field($model, 'rate')->textInput() ?>
 
+    <?= $form->field($model, 'subject')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'content')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'full',

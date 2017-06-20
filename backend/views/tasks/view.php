@@ -7,6 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model backend\models\Task */
 /* @var $completedCompanies integer */
 /* @var $allCompanies integer */
+/* @var $errors integer */
 
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'LBL_TASKS'), 'url' => ['index']];
@@ -63,9 +64,11 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="box-body">
+            <i>Учитываются предприятия, у которых есть Email, но нет сайта</i><br>
             Всего предприятий: <?= $allCompanies ?><br>
             Обработано: <?= $completedCompanies ?>
-            (<?= floor ($completedCompanies / ($allCompanies / 100)) ?>%)
+            (<?= floor ($completedCompanies / ($allCompanies / 100)) ?>%)<br>
+            Ошибок: <?= $errors ?>
         </div>
 
     </div>
@@ -76,6 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="box-body">
+            <h3><?= $model->subject ?></h3><br>
             <?= $model->content ?>
         </div>
 

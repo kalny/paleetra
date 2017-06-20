@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\State;
 use Yii;
 use backend\models\Task;
 use backend\models\TaskSearch;
@@ -68,7 +69,11 @@ class TasksController extends Controller
         return $this->render('view', [
             'model' => $model,
             'completedCompanies' => $model->getStates()->count(),
-            'allCompanies' => Companies::find()->count()
+            'errors' => $model->getStates()->where(['status' => State::STATUS_ERROR])->count(),
+            'allCompanies' => Companies::find()
+                ->where(['not', ['email' => null]])
+                ->andWhere(['site' => null])
+                ->count()
         ]);
     }
 

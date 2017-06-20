@@ -17,7 +17,7 @@ class MailHelper
     {
         $mail = Yii::$app->mailer->compose();
 
-        $mail->setTo($to)
+        return $mail->setTo($to)
             ->setFrom([$from => $from])
             ->setSubject($subject)
             ->setHtmlBody($body)

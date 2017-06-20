@@ -251,4 +251,5 @@ return [
     'LBL_PAUSE' => 'Приостановить',
     'LBL_START' => 'Возобновить',
     'LBL_PROGRESS' => 'Прогресс',
+    'LBL_SUBJECT' => 'Тема',
 ];
